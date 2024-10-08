@@ -1,13 +1,11 @@
 :root {
 	--nav-height: 7rem;
-	--nav-clr-text: hsl(0, 0%, 95%);
-	--nav-clr-bg: hsl(188, 100%, 7%);
 	--clr-text: hsl(188, 100%, 7%);
 	--clr-text-light: hsl(0, 0%, 20%);
 	--clr-bg: hsl(0, 0%, 95%);
-	--clr-primary: #001f24;
-	--clr-secondary: #3f906b;
-	--clr-accent: #3f906b;
+	--clr-primary: hsl(188, 100%, 7%);
+	--clr-secondary: hsl(153, 39%, 41%);
+	--clr-accent: hsl(149, 56%, 77%);
 
 	/* primary: "#001f24",
     secondary: "#3f906b",
@@ -40,13 +38,11 @@
         desktop: 1440px;
     } */
 
-	@media (prefers-color-scheme: dark) {
-		--nav-clr-text: hsl(188, 100%, 7%);
-		--nav-clr-bg: hsl(0, 0%, 95%);
+	/* @media (prefers-color-scheme: dark) {
 		--clr-text: hsl(0, 0%, 95%);
 		--clr-text-light: hsl(0, 0%, 82.5%);
 		--clr-bg: hsl(188, 100%, 7%);
-	}
+		} */
 }
 
 html {
@@ -80,6 +76,12 @@ body {
 	color: var(--clr-text);
 	margin: 0;
 	padding: 0;
+
+	&[data-theme="dark"] {
+		--clr-text: hsl(0, 0%, 95%);
+		--clr-text-light: hsl(0, 0%, 82.5%);
+		--clr-bg: hsl(188, 100%, 7%);
+	}
 }
 
 img,
@@ -119,8 +121,8 @@ hr {
 .content-grid {
 	display: grid;
 	grid-template-columns:
-		[full-width-start] 1fr [breakout-start] 75px [content-start] minmax(min-content, 1000px)
-		[content-end] 75px [breakout-end] 1fr [full-width-end];
+		[full-width-start] 1fr [breakout-start] 125px [content-start] minmax(min-content, 1000px)
+		[content-end] 125px [breakout-end] 1fr [full-width-end];
 	align-content: flex-start;
 }
 
