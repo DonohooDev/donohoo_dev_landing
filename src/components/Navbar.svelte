@@ -1,6 +1,8 @@
 <script lang="ts">
 	import Logo from "$assets/logos/lettermark_flush.svg";
 	import LogoLight from "$assets/logos/lettermark_light_flush.svg";
+	import FullLogo from "$assets/logos/pictorial/donohoo_dev_pictorial_t.svg";
+	// import FullLogo from "$assets/logos/primary/donohoo_dev_primary_t.svg";
 	import { fade, fly, slide } from "svelte/transition";
 	import { onMount } from "svelte";
 	import { quintInOut } from "svelte/easing";
@@ -48,15 +50,15 @@
 
 <header bind:this={navbarEl} class="full-width-container navigation">
 	<div class="main-nav container">
-		<a href="/" class="nav-logo"
-			><img
+		<span class="nav-logo">
+			<img
 				class="logo"
 				width="1920"
 				height="580"
 				src={LogoLight}
 				alt="brand lettermark logo"
-			/></a
-		>
+			/>
+		</span>
 
 		<button on:click={() => toggleMenu()} class="nav-menu-button">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 338 512" width="24" height="24">
@@ -88,6 +90,15 @@
 				<nav class="mobile-menu-navigation">
 					<ul class="">
 						<li>
+							<i class="fa-light fa-house"></i>
+							<button
+								class="mobile-menu-link"
+								role="link"
+								on:click={() => toggleMenu("/")}>Home</button
+							>
+						</li>
+						<li>
+							<i class="fa-light fa-buildings"></i>
 							<button
 								class="mobile-menu-link"
 								role="link"
@@ -95,6 +106,7 @@
 							>
 						</li>
 						<li>
+							<i class="fa-light fa-envelope"></i>
 							<button
 								class="mobile-menu-link"
 								role="link"
@@ -104,7 +116,9 @@
 					</ul>
 				</nav>
 
-				<div class="mobile-menu-divider"></div>
+				<div class="mobile-menu-divider">
+					<img src={FullLogo} alt="full brand primary logo" />
+				</div>
 
 				<footer class="mobile-menu-footer">
 					<ul>
@@ -129,26 +143,6 @@
 	</div>
 </header>
 
-<!-- <nav class="nav">
-	<ul class="nav-items">
-		<li>
-			<a href="/"
-				><img
-					class="logo"
-					width="1920"
-					height="580"
-					src={LogoLight}
-					alt="brand-lettermark-logo"
-				/></a
-			>
-		</li>
-		<li><a href="/">Home</a></li>
-		<li><a href="/about">About</a></li>
-		<li><a href="/contact">Contact</a></li>
-		<li><button><i class="fa-solid fa-bars" /></button></li>
-	</ul>
-</nav> -->
-
 <style scoped>
 	.navigation {
 		align-content: center;
@@ -160,7 +154,6 @@
 			backdrop-filter 0.3s;
 
 		&.scrolled {
-			/* box-shadow: 0 -0.5rem 0.5rem 0.75rem hsl(from var(--clr-text) h s l / 0.05); */
 			backdrop-filter: blur(0.8rem);
 		}
 	}
@@ -204,8 +197,8 @@
 	}
 
 	.mobile-menu {
-		min-height: calc(100vh - var(--nav-height));
-		min-height: calc(100svh - var(--nav-height));
+		height: calc(100vh - var(--nav-height));
+		height: calc(100svh - var(--nav-height));
 		margin-inline: 1rem;
 		padding-inline: 1rem;
 		border-radius: 1rem;
@@ -214,18 +207,22 @@
 		box-shadow: 0 0 0.75rem 1rem hsl(from var(--clr-text) h s l / 0.0125);
 		display: grid;
 		grid-auto-rows: auto 1fr auto;
+		overflow-y: scroll;
 	}
 
 	.mobile-menu-navigation {
 		& ul {
 			list-style: none;
-			padding-inline: 0;
+			padding-inline: 1rem;
 			display: grid;
 			grid-auto-rows: 1fr;
 			margin-top: 0rem;
 		}
 
 		& li {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
 			border-bottom: solid 1px hsl(from var(--clr-bg) h s 20% / 0.5);
 		}
 
@@ -242,6 +239,21 @@
 	}
 
 	.mobile-menu-divider {
+		border-radius: 1rem;
+		background: linear-gradient(
+			to bottom,
+			hsl(from var(--clr-bg) h s 6% / 0.1),
+			hsl(from var(--clr-bg) h s 20% / 0.5)
+		);
+		display: flex;
+		place-items: center;
+
+		& > img {
+			filter: drop-shadow(0 0 1rem hsl(from var(--clr-bg) h s 3%));
+			width: 75%;
+			max-width: 40rem;
+			margin: auto;
+		}
 	}
 
 	.mobile-menu-footer {
@@ -251,9 +263,6 @@
 			padding-inline: 0;
 			display: flex;
 			justify-content: space-between;
-		}
-
-		& li {
 		}
 
 		& button {

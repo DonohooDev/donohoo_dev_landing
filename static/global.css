@@ -6,6 +6,8 @@
 	--clr-text-light: hsl(0, 0%, 20%);
 	--clr-bg: hsl(0, 0%, 95%);
 	--clr-primary: #001f24;
+	--clr-secondary: #3f906b;
+	--clr-accent: #3f906b;
 
 	/* primary: "#001f24",
     secondary: "#3f906b",
