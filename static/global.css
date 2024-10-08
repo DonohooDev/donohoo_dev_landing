@@ -59,6 +59,19 @@ html {
 	color-scheme: light dark;
 }
 
+* {
+	font-variant-ligatures: no-common-ligatures;
+	line-height: inherit;
+	scrollbar-width: thin;
+	scrollbar-color: var(--clr-primary) var(--clr-bg);
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
 body {
 	font-size: 1.6rem;
 	background-color: var(--clr-bg);

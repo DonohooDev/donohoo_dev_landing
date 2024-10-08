@@ -16,18 +16,25 @@
 	<p>REGULAR CONTENT SIZE</p>
 	<p>REGULAR CONTENT SIZE</p>
 	<p>REGULAR CONTENT SIZE</p>
+	<p>REGULAR CONTENT SIZE</p>
+	<p>REGULAR CONTENT SIZE</p>
+	<p>REGULAR CONTENT SIZE</p>
+	<p>REGULAR CONTENT SIZE</p>
+	<p>REGULAR CONTENT SIZE</p>
+	<p>REGULAR CONTENT SIZE</p>
+	<p>REGULAR CONTENT SIZE</p>
+	<p>REGULAR CONTENT SIZE</p>
+	<p>REGULAR CONTENT SIZE</p>
+	<p>REGULAR CONTENT SIZE</p>
+	<p>REGULAR CONTENT SIZE</p>
+	<p>REGULAR CONTENT SIZE</p>
+	<p>REGULAR CONTENT SIZE</p>
+	<p>REGULAR CONTENT SIZE</p>
+	<p>REGULAR CONTENT SIZE</p>
+	<p>REGULAR CONTENT SIZE</p>
+	<p>REGULAR CONTENT SIZE</p>
+	<p>REGULAR CONTENT SIZE</p>
 </div>
 
 <style scoped>
-	.full-width-container {
-		background-color: teal;
-	}
-
-	.breakout-container {
-		background-color: lightcoral;
-	}
-
-	.container {
-		background-color: lightblue;
-	}
 </style>

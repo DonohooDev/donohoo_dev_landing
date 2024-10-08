@@ -4,7 +4,7 @@
 </script>
 
 <div class="app-layout">
-	<div class="content-grid">
+	<div class="content-grid navbar">
 		<Navbar />
 	</div>
 
@@ -25,5 +25,14 @@
 		grid-template-rows: var(--nav-height) 1fr auto;
 		margin: 0;
 		padding: 0;
+	}
+
+	.navbar {
+		position: -webkit-sticky;
+		position: sticky;
+		top: 0;
+		z-index: 100;
+		isolation: auto;
+		align-self: start;
 	}
 </style>

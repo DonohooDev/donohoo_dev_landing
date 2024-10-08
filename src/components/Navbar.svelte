@@ -1,42 +1,90 @@
 <script lang="ts">
 	import Logo from "$assets/logos/lettermark_flush.svg";
-	import LogoLight from "$assets/logos/lettermark_light.svg";
+	import LogoLight from "$assets/logos/lettermark_light_flush.svg";
+	import { fade, fly } from "svelte/transition";
+	import { onMount } from "svelte";
 
 	let isMenuOpen = false;
-	function toggleMenu(e: MouseEvent) {
-		e.preventDefault();
+	let navbarEl: HTMLElement | null = null;
+	let backdropEl: HTMLDivElement | null = null;
+	let scrollY = 0;
+
+	$: if (navbarEl) {
+		if (scrollY > 0) {
+			navbarEl.classList.add("scrolled");
+		} else {
+			navbarEl.classList.remove("scrolled");
+		}
+	}
+
+	function toggleMenu() {
+		if (isMenuOpen) {
+			// If we are closing the menu
+			document.body.style.overflowY = "auto";
+		} else {
+			// If we are opening the menu
+			document.body.style.overflowY = "hidden";
+		}
+
 		isMenuOpen = !isMenuOpen;
 		console.log(`isMenuOpen :>>`, isMenuOpen);
 	}
-	console.log(`isMenuOpen :>>`, isMenuOpen);
+
+	onMount(() => {
+		// Ensure the header is updated on initial load
+		if (scrollY > 25 && navbarEl) {
+			navbarEl.classList.add("scrolled");
+		}
+	});
 </script>
 
-<header class="full-width-container navigation">
-	<div class={isMenuOpen ? "backdrop" : "hidden"} on:click={toggleMenu} role="presentation">
-		hi
+<svelte:window bind:scrollY />
+
+<header bind:this={navbarEl} class="full-width-container navigation">
+	<div class="main-nav container">
+		<a href="/" class="nav-logo"
+			><img
+				class="logo"
+				width="1920"
+				height="580"
+				src={LogoLight}
+				alt="brand lettermark logo"
+			/></a
+		>
+
+		<button on:click={toggleMenu} class="nav-menu-button">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 338 512" width="24" height="24">
+				{#if !isMenuOpen}
+					<path
+						d="M0 88C0 74.7 10.7 64 24 64l400 0c13.3 0 24 10.7 24 24s-10.7 24-24 24L24 112C10.7 112 0 101.3 0 88zM0 248c0-13.3 10.7-24 24-24l400 0c13.3 0 24 10.7 24 24s-10.7 24-24 24L24 272c-13.3 0-24-10.7-24-24zM448 408c0 13.3-10.7 24-24 24L24 432c-13.3 0-24-10.7-24-24s10.7-24 24-24l400 0c13.3 0 24 10.7 24 24z"
+						fill="white"
+						in:fade={{ duration: 150 }}
+						out:fade={{ duration: 150 }}
+					/>
+				{:else}
+					<path
+						d="M345 137c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-119 119L73 103c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l119 119L39 375c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l119-119L311 409c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-119-119L345 137z"
+						fill="white"
+						in:fade={{ duration: 150 }}
+						out:fade={{ duration: 150 }}
+					/>
+				{/if}
+			</svg>
+		</button>
 	</div>
-	<div class="container">
-		<div class="mobile-nav">
-			<a href="/"
-				><img
-					class="logo"
-					width="1920"
-					height="580"
-					src={Logo}
-					alt="brand lettermark logo"
-				/></a
-			>
-			<div></div>
-			{isMenuOpen}
-			<button on:click={toggleMenu} class="menu-button">
-				<span class={isMenuOpen ? "" : "hidden"}>
-					<i class="fa-solid fa-times fa-xl" />
-				</span>
-				<span class={isMenuOpen ? "hidden" : ""}>
-					<i class="fa-solid fa-bars fa-xl" />
-				</span>
-			</button>
-		</div>
+
+	<div class={isMenuOpen ? "backdrop" : "hidden"} bind:this={backdropEl} role="presentation">
+		{#if isMenuOpen}
+			<div class="mobile-menu">
+				<nav class="nav" transition:fly={{ y: -20, duration: 300 }}>
+					<ul class="nav-items">
+						<li><a href="/">Home</a></li>
+						<li><a href="/about">About</a></li>
+						<li><a href="/contact">Contact</a></li>
+					</ul>
+				</nav>
+			</div>
+		{/if}
 	</div>
 </header>
 
@@ -62,63 +110,61 @@
 
 <style scoped>
 	.navigation {
+		align-content: center;
 		padding-block: 0;
 		height: var(--nav-height);
-		background-color: var(--nav-clr-bg);
-		color: var(--nav-clr-text);
+		background-color: hsl(from var(--clr-bg) h s l / 0.9);
+		transition:
+			box-shadow 0.3s,
+			backdrop-filter 0.3s;
 
-		& > .container {
-			padding-block: 0;
+		&.scrolled {
+			box-shadow: 0 -0.5rem 0.5rem 0.75rem hsl(from var(--clr-text) h s l / 0.05);
+			backdrop-filter: blur(0.8rem);
 		}
+	}
+
+	.main-nav {
+		display: flex;
+		align-items: center;
+		padding-block: 0;
+	}
+
+	.nav-logo {
+		flex: 1;
+
+		& > img {
+			max-height: calc(var(--nav-height) - 2rem);
+			width: 30vw;
+			max-width: 125px;
+		}
+	}
+
+	.nav-menu-button {
+		background-color: transparent;
+		border: none;
+		color: var(--nav-clr-text);
+		cursor: pointer;
+		font-size: 1.5rem;
+		margin-inline: 1rem;
 	}
 
 	.backdrop {
 		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		/* width: 100%; */
-		/* height: 100%; */
-		background-color: rgba(0, 0, 0, 0.5);
-		z-index: 1;
+		inset: 0;
+		top: var(--nav-height);
+		pointer-events: auto;
+		z-index: 999;
+		background-color: #a5137e;
 	}
 
-	.mobile-nav {
-		display: flex;
-		align-items: center;
-		height: inherit;
-
-		& > div {
-			flex: 1;
-		}
-	}
-
-	.menu-button {
-		background-color: transparent;
-		border: none;
-		color: var(--nav-clr-text);
-		font-size: 1.5rem;
-		cursor: pointer;
-	}
-
-	.nav-items {
-		display: flex;
-		align-items: center;
-		list-style: none;
-		gap: 2rem;
-
-		&:first-child {
-			flex: 1;
-		}
-	}
-
-	.logo {
-		max-height: calc(var(--nav-height) - 2rem);
-		width: 30vw;
-		max-width: 125px;
-		/* height: calc(var(--nav-height) - 2rem);
-		width: min(100%, 300px); */
-		/* height: min(100%, var(--nav-height)); */
+	.mobile-menu {
+		min-height: calc(100vh - var(--nav-height));
+		min-height: calc(100svh - var(--nav-height));
+		margin-inline: 1rem;
+		padding-inline: 1rem;
+		border-radius: 0.5rem;
+		border: solid 2px var(--clr-bg);
+		background-color: #13a51a;
 	}
 </style>
