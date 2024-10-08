@@ -153,6 +153,10 @@ hr {
 	height: inherit;
 }
 
+.container :first-child {
+	margin-top: 0;
+}
+
 .hidden {
 	display: none;
 	visibility: hidden;

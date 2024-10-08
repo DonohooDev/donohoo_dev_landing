@@ -1,8 +1,10 @@
 <script lang="ts">
 	import Logo from "$assets/logos/lettermark_flush.svg";
 	import LogoLight from "$assets/logos/lettermark_light_flush.svg";
-	import { fade, fly } from "svelte/transition";
+	import { fade, fly, slide } from "svelte/transition";
 	import { onMount } from "svelte";
+	import { quintInOut } from "svelte/easing";
+	import { goto } from "$app/navigation";
 
 	let isMenuOpen = false;
 	let navbarEl: HTMLElement | null = null;
@@ -17,7 +19,7 @@
 		}
 	}
 
-	function toggleMenu() {
+	function toggleMenu(goToRoute?: string) {
 		if (isMenuOpen) {
 			// If we are closing the menu
 			document.body.style.overflowY = "auto";
@@ -27,6 +29,10 @@
 		}
 
 		isMenuOpen = !isMenuOpen;
+
+		if (goToRoute) {
+			goto(goToRoute);
+		}
 		console.log(`isMenuOpen :>>`, isMenuOpen);
 	}
 
@@ -52,7 +58,7 @@
 			/></a
 		>
 
-		<button on:click={toggleMenu} class="nav-menu-button">
+		<button on:click={() => toggleMenu()} class="nav-menu-button">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 338 512" width="24" height="24">
 				{#if !isMenuOpen}
 					<path
@@ -73,16 +79,51 @@
 		</button>
 	</div>
 
-	<div class={isMenuOpen ? "backdrop" : "hidden"} bind:this={backdropEl} role="presentation">
+	<div class="backdrop {isMenuOpen ? 'open' : ''}" bind:this={backdropEl} role="presentation">
 		{#if isMenuOpen}
-			<div class="mobile-menu">
-				<nav class="nav" transition:fly={{ y: -20, duration: 300 }}>
-					<ul class="nav-items">
-						<li><a href="/">Home</a></li>
-						<li><a href="/about">About</a></li>
-						<li><a href="/contact">Contact</a></li>
+			<div
+				class="mobile-menu"
+				transition:slide={{ axis: "x", duration: 300, easing: quintInOut }}
+			>
+				<nav class="mobile-menu-navigation">
+					<ul class="">
+						<li>
+							<button
+								class="mobile-menu-link"
+								role="link"
+								on:click={() => toggleMenu("/about")}>About</button
+							>
+						</li>
+						<li>
+							<button
+								class="mobile-menu-link"
+								role="link"
+								on:click={() => toggleMenu("/contact")}>Contact</button
+							>
+						</li>
 					</ul>
 				</nav>
+
+				<div class="mobile-menu-divider"></div>
+
+				<footer class="mobile-menu-footer">
+					<ul>
+						<li>
+							<button
+								class="mobile-menu-link"
+								role="link"
+								on:click={() => toggleMenu()}>Terms of Use</button
+							>
+						</li>
+						<li>
+							<button
+								class="mobile-menu-link"
+								role="link"
+								on:click={() => toggleMenu()}>Privacy Policy</button
+							>
+						</li>
+					</ul>
+				</footer>
 			</div>
 		{/if}
 	</div>
@@ -119,7 +160,7 @@
 			backdrop-filter 0.3s;
 
 		&.scrolled {
-			box-shadow: 0 -0.5rem 0.5rem 0.75rem hsl(from var(--clr-text) h s l / 0.05);
+			/* box-shadow: 0 -0.5rem 0.5rem 0.75rem hsl(from var(--clr-text) h s l / 0.05); */
 			backdrop-filter: blur(0.8rem);
 		}
 	}
@@ -154,8 +195,12 @@
 		inset: 0;
 		top: var(--nav-height);
 		pointer-events: auto;
-		z-index: 999;
+		z-index: -1;
 		background-color: #a5137e;
+
+		&.open {
+			z-index: 999;
+		}
 	}
 
 	.mobile-menu {
@@ -163,8 +208,60 @@
 		min-height: calc(100svh - var(--nav-height));
 		margin-inline: 1rem;
 		padding-inline: 1rem;
-		border-radius: 0.5rem;
+		border-radius: 1rem;
 		border: solid 2px var(--clr-bg);
-		background-color: #13a51a;
+		background-color: hsl(from var(--clr-bg) h s 6%);
+		box-shadow: 0 0 0.75rem 1rem hsl(from var(--clr-text) h s l / 0.0125);
+		display: grid;
+		grid-auto-rows: auto 1fr auto;
+	}
+
+	.mobile-menu-navigation {
+		& ul {
+			list-style: none;
+			padding-inline: 0;
+			display: grid;
+			grid-auto-rows: 1fr;
+			margin-top: 0rem;
+		}
+
+		& li {
+			border-bottom: solid 1px hsl(from var(--clr-bg) h s 20% / 0.5);
+		}
+
+		& button {
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			padding-block: 2rem;
+			width: 100%;
+			text-align: left;
+			font-size: 1.6rem;
+			font-weight: 600;
+		}
+	}
+
+	.mobile-menu-divider {
+	}
+
+	.mobile-menu-footer {
+		padding-inline: 2rem;
+		& ul {
+			list-style: none;
+			padding-inline: 0;
+			display: flex;
+			justify-content: space-between;
+		}
+
+		& li {
+		}
+
+		& button {
+			background-color: transparent;
+			border: none;
+			cursor: pointer;
+			font-size: 1.2rem;
+			font-weight: 500;
+		}
 	}
 </style>
