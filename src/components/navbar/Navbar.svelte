@@ -1,9 +1,7 @@
 <script lang="ts">
-	import LogoSolid from ".//NavbarLogo.svelte";
-	import Logo from "$assets/logos/lettermark_flush.svg";
-	// import FullLogo from "$assets/logos/pictorial/donohoo_dev_pictorial_t.svg";
+	import LogoSolid from "./NavbarLogo.svelte";
 	import FullLogo from "$assets/logos/primary/donohoo_dev_primary_t.svg";
-	import { fade, fly, slide } from "svelte/transition";
+	import { slide } from "svelte/transition";
 	import { quintInOut } from "svelte/easing";
 	import { goto } from "$app/navigation";
 	import NavbarThemeToggle from "./NavbarThemeToggle.svelte";

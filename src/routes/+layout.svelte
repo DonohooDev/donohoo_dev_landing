@@ -1,6 +1,6 @@
 <script>
-	// import Footer from "./Footer.svelte";
 	import Navbar from "$components/navbar/Navbar.svelte";
+	import Footer from "$components/footer/Footer.svelte";
 </script>
 
 <div class="app-layout">
@@ -12,8 +12,9 @@
 		<slot />
 	</main>
 
-	<!-- <Footer /> -->
-	<div class="content-grid">footer</div>
+	<div class="content-grid">
+		<Footer />
+	</div>
 </div>
 
 <style scoped>
