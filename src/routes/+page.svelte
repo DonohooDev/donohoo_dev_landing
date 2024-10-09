@@ -37,7 +37,4 @@
 </div>
 
 <style scoped>
-	.full-width-container {
-		background-color: var(--clr-secondary);
-	}
 </style>

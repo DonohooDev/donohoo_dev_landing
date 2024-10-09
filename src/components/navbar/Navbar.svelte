@@ -53,28 +53,42 @@
 					<nav class="mobile-menu-navigation">
 						<ul>
 							<li>
-								<i class="fa-regular fa-house fa-lg"></i>
 								<button
 									class="mobile-menu-link"
 									role="link"
-									on:click={() => toggleMobileMenu("/")}>Home</button
+									on:click={() => toggleMobileMenu("/")}
 								>
+									<i
+										style="margin-right: 1rem;"
+										class="fa-regular fa-house fa-lg"
+									/>
+									Home
+								</button>
 							</li>
 							<li>
-								<i class="fa-regular fa-buildings fa-lg"></i>
 								<button
 									class="mobile-menu-link"
 									role="link"
-									on:click={() => toggleMobileMenu("/about")}>About</button
+									on:click={() => toggleMobileMenu("/about")}
 								>
+									<i
+										style="margin-right: 1rem;"
+										class="fa-regular fa-buildings fa-lg"
+									/>About
+								</button>
 							</li>
 							<li>
-								<i class="fa-regular fa-envelope fa-lg"></i>
 								<button
 									class="mobile-menu-link"
 									role="link"
-									on:click={() => toggleMobileMenu("/contact")}>Contact</button
+									on:click={() => toggleMobileMenu("/contact")}
 								>
+									<i
+										style="margin-right: 1rem;"
+										class="fa-regular fa-envelope fa-lg"
+									/>
+									Contact
+								</button>
 							</li>
 						</ul>
 					</nav>
@@ -219,6 +233,7 @@
 		display: grid;
 		grid-auto-rows: auto 1fr auto;
 		overflow-y: scroll;
+		gap: 2rem;
 
 		@media screen and (min-width: 768px) {
 			display: none;
@@ -238,7 +253,7 @@
 			display: flex;
 			align-items: center;
 			gap: 1rem;
-			border-bottom: solid 1px hsl(from var(--clr-bg) h s 10% / 0.5);
+			border-bottom: solid 1px hsl(from var(--clr-text) h s l / 0.35);
 		}
 
 		& button {
@@ -255,12 +270,12 @@
 		border-radius: 1rem;
 		display: flex;
 		place-items: center;
-		/* background: linear-gradient(
+		background-color: linear-gradient(
 			to bottom,
 			hsl(from var(--clr-bg) h s 6% / 0.01),
 			hsl(from var(--clr-bg) h s 20% / 0.1),
 			hsl(from var(--clr-bg) h s 20% / 0.25)
-		); */
+		);
 
 		& > img {
 			filter: drop-shadow(0 0 5rem hsl(from var(--clr-secondary) h s l / 0.4));
@@ -271,10 +286,10 @@
 	}
 
 	:global([data-theme="light"]) .mobile-menu-divider {
+		background-color: hsl(from var(--clr-primary) h s 6% / 0.9);
+
 		& > img {
-			filter: drop-shadow(0 0 5rem hsl(from var(--clr-primary) h s l / 0.4));
-			background-color: hsl(from var(--clr-secondary) h 95% 5% / 0.75);
-			border-radius: 1rem;
+			filter: drop-shadow(0 0 5rem hsl(from var(--clr-primary) h s l / 0.25));
 		}
 	}
 
