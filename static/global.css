@@ -1,11 +1,13 @@
 :root {
 	--nav-height: 7rem;
-	--clr-text: hsl(188, 100%, 7%);
-	--clr-text-light: hsl(0, 0%, 20%);
-	--clr-bg: hsl(0, 0%, 95%);
-	--clr-primary: hsl(188, 100%, 7%);
-	--clr-secondary: hsl(153, 39%, 41%);
-	--clr-accent: hsl(149, 56%, 77%);
+	--clr-text: hsl(188 100% 7%);
+	--clr-bg: hsl(188 0% 95%);
+
+	--clr-primary: hsl(153 39% 30%);
+	--clr-secondary: hsl(153 39% 41%);
+	--clr-accent: hsl(149 56% 77%);
+	--clr-white: hsl(0 0% 95%);
+	--clr-gray: hsl(188 0% 20%);
 
 	/* primary: "#001f24",
     secondary: "#3f906b",
@@ -61,7 +63,7 @@ html {
 	font-variant-ligatures: no-common-ligatures;
 	line-height: inherit;
 	scrollbar-width: thin;
-	scrollbar-color: var(--clr-primary) var(--clr-bg);
+	scrollbar-color: var(--clr-text) var(--clr-bg);
 }
 
 *,
@@ -71,16 +73,22 @@ html {
 }
 
 body {
-	font-size: 1.6rem;
+	font-size: 1.4rem;
 	background-color: var(--clr-bg);
 	color: var(--clr-text);
 	margin: 0;
 	padding: 0;
+	-webkit-transition: background-color 100ms linear;
+	-ms-transition: background-color 100ms linear;
+	transition: background-color 100ms linear;
 
 	&[data-theme="dark"] {
-		--clr-text: hsl(0, 0%, 95%);
-		--clr-text-light: hsl(0, 0%, 82.5%);
-		--clr-bg: hsl(188, 100%, 7%);
+		--clr-text: hsl(0 0% 95%);
+		--clr-bg: hsl(153 5% 6%);
+	}
+
+	& main header {
+		margin-top: 4rem;
 	}
 }
 
@@ -91,6 +99,12 @@ video {
 	height: auto;
 	display: block;
 }
+
+/* h1,
+h2,
+h3 {
+	color: var(--clr-primary);
+} */
 
 /* Fix for collapsing margins */
 /* body,
@@ -121,19 +135,21 @@ hr {
 .content-grid {
 	display: grid;
 	grid-template-columns:
-		[full-width-start] 1fr [breakout-start] 125px [content-start] minmax(min-content, 1000px)
-		[content-end] 125px [breakout-end] 1fr [full-width-end];
+		[full-width-start] 1fr [breakout-start] 80px [content-start] minmax(min-content, 800px)
+		[content-end] 80px [breakout-end] 1fr [full-width-end];
 	align-content: flex-start;
 }
 
-.content-grid > .full-width-container {
+.content-grid > .full-width-container,
+.content-grid > .full-width-breakout-container {
 	grid-column: full-width;
 	display: grid;
 	grid-template-columns: inherit;
 	align-content: flex-start;
 }
 
-.content-grid > .breakout-container {
+.content-grid > .breakout-container,
+.full-width-breakout-container > .container {
 	grid-column: full-width;
 
 	@media screen and (min-width: 768px) {
@@ -152,14 +168,15 @@ hr {
 
 .content-grid > .container,
 .content-grid > .breakout-container,
-.full-width-container > .container {
+.full-width-container > .container,
+.full-width-breakout-container > .container {
 	padding: 2rem;
 	height: inherit;
 }
 
-.container :first-child {
+/* .container :first-child {
 	margin-top: 0;
-}
+} */
 
 .hidden {
 	display: none;

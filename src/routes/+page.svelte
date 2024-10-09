@@ -6,12 +6,6 @@
 	</div>
 </header>
 
-<div class="breakout-container">
-	<p>Breakout paragraph that has some awesome content.</p>
-	<p>Breakout paragraph that has some awesome content.</p>
-	<p>Breakout paragraph that has some awesome content.</p>
-</div>
-
 <div class="container">
 	<p>REGULAR CONTENT SIZE</p>
 	<p>REGULAR CONTENT SIZE</p>
@@ -36,5 +30,14 @@
 	<p>REGULAR CONTENT SIZE</p>
 </div>
 
+<div class="breakout-container">
+	<p>Breakout paragraph that has some awesome content.</p>
+	<p>Breakout paragraph that has some awesome content.</p>
+	<p>Breakout paragraph that has some awesome content.</p>
+</div>
+
 <style scoped>
+	.full-width-container {
+		background-color: var(--clr-secondary);
+	}
 </style>

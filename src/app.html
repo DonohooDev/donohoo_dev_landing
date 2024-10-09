@@ -56,11 +56,6 @@
 	<body data-sveltekit-preload-data="hover" data-theme="light">
 		<script>
 			function setInitialTheme() {
-				if (typeof window === "undefined") {
-					// Server side rendering
-					return;
-				}
-
 				const persisted = localStorage.getItem("theme");
 				if (persisted === "light" || persisted === "dark") {
 					// If the user has set a theme, use it
