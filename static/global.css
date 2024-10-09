@@ -1,6 +1,7 @@
 :root {
 	--nav-height: 7rem;
 	--clr-text: hsl(188 100% 7%);
+	--clr-text-inverse: hsl(188 100% 93%);
 	--clr-text-secondary: hsl(188 5% 50%);
 	--clr-bg: hsl(188 0% 95%);
 
@@ -82,12 +83,23 @@ body {
 	-webkit-transition: background-color 100ms linear;
 	-ms-transition: background-color 100ms linear;
 	transition: background-color 100ms linear;
+	accent-color: var(--clr-primary);
+	caret-color: var(--clr-primary);
+	highlight-color: hsl(from var(--clr-primary) h s l / 0.5);
+	color-scheme: light;
 
 	&[data-theme="dark"] {
 		--clr-text: hsl(from var(--clr-white) to var(--clr-text));
+		--clr-text-inverse: hsl(from var(--clr-white) to var(--clr-text-inverse));
 		--clr-text-secondary: hsl(188 10% 70%);
 		--clr-bg: hsl(153 5% 6%);
+
+		color-scheme: dark;
 	}
+}
+
+mark {
+	background-color: var(--clr-accent);
 }
 
 img,
@@ -96,6 +108,16 @@ video {
 	max-width: 100%;
 	height: auto;
 	display: block;
+}
+
+ul,
+ol {
+	padding-left: 1.5rem;
+}
+
+ul {
+	list-style: none;
+	padding-inline-start: 0;
 }
 
 h1,
@@ -228,4 +250,15 @@ a {
 .hidden {
 	display: none;
 	visibility: hidden;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	border: 0;
 }

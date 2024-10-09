@@ -1,3 +1,8 @@
+<script>
+	import { goto } from "$app/navigation";
+	import Button from "$components/common/Button.svelte";
+</script>
+
 <header class="full-width-container">
 	<div class="container">
 		<h1>Transforming Ideas into Innovation</h1>

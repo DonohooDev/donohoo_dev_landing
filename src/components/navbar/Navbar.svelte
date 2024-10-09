@@ -173,6 +173,7 @@
 		}
 
 		& ul {
+			margin-left: 2rem;
 			display: flex;
 			list-style: none;
 			align-items: center;
