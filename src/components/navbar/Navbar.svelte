@@ -1,6 +1,6 @@
 <script lang="ts">
 	import LogoSolid from "./NavbarLogo.svelte";
-	import FullLogo from "$assets/logos/primary/donohoo_dev_primary_t.svg";
+	import FullLogo from "$assets/logos/primary/donohoo_dev_primary_flush_t.svg";
 	import { slide } from "svelte/transition";
 	import { quintInOut } from "svelte/easing";
 	import { goto } from "$app/navigation";
@@ -271,26 +271,11 @@
 	}
 
 	.mobile-menu-divider {
-		border-radius: 1rem;
 		display: flex;
 		place-items: center;
-		box-shadow: 0 0 1rem 0 hsl(from var(--clr-secondary) h s l / 0.2);
-		margin: 2rem 1rem;
-		/* background-image: linear-gradient(
-			to bottom,
-			hsl(from var(--clr-text) h s l / 0.1),
-			hsl(from var(--clr-text) h s l / 0.25),
-			hsl(from var(--clr-text) h s l / 0.5)
-		); */
-		/* background-color: linear-gradient(
-			to bottom,
-			hsl(from var(--clr-bg) h s 6% / 0.01),
-			hsl(from var(--clr-bg) h s 20% / 0.1),
-			hsl(from var(--clr-bg) h s 20% / 0.25)
-		); */
 
 		& > img {
-			filter: drop-shadow(0 0 5rem hsl(from var(--clr-secondary) h s l / 0.75));
+			filter: drop-shadow(0 0 5rem hsl(from var(--clr-secondary) h s l / 0.6));
 			width: 80%;
 			max-width: 40rem;
 			margin: auto;
