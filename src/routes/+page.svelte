@@ -13,36 +13,5 @@
 	</div>
 </header>
 
-<!-- 
-<div class="container">
-	<p>REGULAR CONTENT SIZE</p>
-	<p>REGULAR CONTENT SIZE</p>
-	<p>REGULAR CONTENT SIZE</p>
-	<p>REGULAR CONTENT SIZE</p>
-	<p>REGULAR CONTENT SIZE</p>
-	<p>REGULAR CONTENT SIZE</p>
-	<p>REGULAR CONTENT SIZE</p>
-	<p>REGULAR CONTENT SIZE</p>
-	<p>REGULAR CONTENT SIZE</p>
-	<p>REGULAR CONTENT SIZE</p>
-	<p>REGULAR CONTENT SIZE</p>
-	<p>REGULAR CONTENT SIZE</p>
-	<p>REGULAR CONTENT SIZE</p>
-	<p>REGULAR CONTENT SIZE</p>
-	<p>REGULAR CONTENT SIZE</p>
-	<p>REGULAR CONTENT SIZE</p>
-	<p>REGULAR CONTENT SIZE</p>
-	<p>REGULAR CONTENT SIZE</p>
-	<p>REGULAR CONTENT SIZE</p>
-	<p>REGULAR CONTENT SIZE</p>
-	<p>REGULAR CONTENT SIZE</p>
-</div>
-
-<div class="breakout-container">
-	<p>Breakout paragraph that has some awesome content.</p>
-	<p>Breakout paragraph that has some awesome content.</p>
-	<p>Breakout paragraph that has some awesome content.</p>
-</div> -->
-
 <style scoped>
 </style>

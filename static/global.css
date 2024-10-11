@@ -89,7 +89,7 @@ body {
 	color-scheme: light;
 
 	&[data-theme="dark"] {
-		--clr-text: hsl(from var(--clr-white) to var(--clr-text));
+		--clr-text: hsl(from var(--clr-white) h s l);
 		--clr-text-inverse: hsl(from var(--clr-white) to var(--clr-text-inverse));
 		--clr-text-secondary: hsl(188 10% 70%);
 		--clr-bg: hsl(153 5% 6%);

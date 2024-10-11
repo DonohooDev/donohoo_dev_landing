@@ -49,11 +49,7 @@
 					</a>
 				</li>
 				<li>
-					<a
-						rel="noopener noreferrer"
-						target="_blank"
-						href="https://twitter.com/JoshWComeau"
-					>
+					<a rel="noopener noreferrer" target="_blank" href="https://x.com/DonohooDev">
 						<i class="fa-brands fa-x-twitter fa-xl" />
 						<span class="visually-hidden">Donohoo Dev, LLC X profile</span>
 					</a>
@@ -99,10 +95,15 @@
 
 		& > .container {
 			display: grid;
-			gap: 4rem;
+			gap: 2rem;
 
 			@media (min-width: 768px) {
 				grid-template-columns: 1fr 1fr;
+				gap: 3rem;
+			}
+
+			@media (min-width: 1200px) {
+				gap: 4rem;
 			}
 		}
 	}
@@ -223,6 +224,7 @@
 		}
 
 		& > small {
+			font-size: 1.125rem;
 			margin-top: 2rem;
 			color: var(--clr-text-secondary);
 		}

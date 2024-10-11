@@ -199,7 +199,11 @@
 	.nav-actions {
 		display: flex;
 		align-items: center;
-		gap: 1.25rem;
+		gap: 0.5rem;
+
+		@media (min-width: 768px) {
+			gap: 1rem;
+		}
 	}
 
 	.backdrop {
@@ -226,9 +230,9 @@
 		margin: 1rem;
 		padding-inline: 1rem;
 		border-radius: 1rem;
-		border: solid 2px hsl(from var(--clr-text) h s l / 0.15);
+		border: solid 2px hsl(from var(--clr-text) h s l / 0.2);
 		background-color: hsl(from var(--clr-bg) h s l / 1);
-		box-shadow: 0 0 1rem 0 hsl(from var(--clr-text) h s l / 0.1);
+		box-shadow: 0 0 1rem 0 hsl(from var(--clr-text) h s l / 0.2);
 		display: grid;
 		grid-auto-rows: auto 1fr auto;
 		overflow-y: scroll;
