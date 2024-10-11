@@ -22,6 +22,7 @@
 		</div>
 
 		<div class="navigation">
+			<p>Navigation</p>
 			<ul>
 				<li>
 					<button role="link" on:click={() => goto("/")}>Home</button>
@@ -136,11 +137,19 @@
 	.navigation {
 		display: none;
 
+		& > p {
+			font-size: 1.5rem;
+			margin: 0 0 1rem;
+			text-decoration: underline;
+			text-align: right;
+		}
+
 		& > ul {
 			display: flex;
-			gap: 2rem;
+			gap: 4rem;
 			margin: 0;
 			padding: 0;
+			justify-content: flex-end;
 
 			& > li {
 				& > button {
@@ -163,6 +172,7 @@
 			display: block;
 			grid-column: 2;
 			order: 3;
+			align-self: flex-end;
 		}
 	}
 
@@ -188,6 +198,7 @@
 			grid-column: 2;
 			order: 5;
 			align-self: flex-end;
+			justify-self: flex-end;
 		}
 	}
 
