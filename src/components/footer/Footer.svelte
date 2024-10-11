@@ -21,6 +21,20 @@
 			>
 		</div>
 
+		<div class="navigation">
+			<ul>
+				<li>
+					<button role="link" on:click={() => goto("/")}>Home</button>
+				</li>
+				<li>
+					<button role="link" on:click={() => goto("/about")}>About</button>
+				</li>
+				<li>
+					<button role="link" on:click={() => goto("/contact")}>Contact</button>
+				</li>
+			</ul>
+		</div>
+
 		<div class="actions">
 			<ul>
 				<li>
@@ -59,14 +73,10 @@
 		<div class="copyright">
 			<ul class="links">
 				<li>
-					<button class="mobile-menu-link" role="link" on:click={() => goto("/")}
-						>Terms of Use</button
-					>
+					<button role="link" on:click={() => goto("/")}>Terms of Use</button>
 				</li>
 				<li>
-					<button class="mobile-menu-link" role="link" on:click={() => goto("/")}
-						>Privacy Policy</button
-					>
+					<button role="link" on:click={() => goto("/")}>Privacy Policy</button>
 				</li>
 			</ul>
 
@@ -89,17 +99,30 @@
 		& > .container {
 			display: grid;
 			gap: 4rem;
+
+			@media (min-width: 768px) {
+				grid-template-columns: 1fr 1fr;
+			}
 		}
 	}
 
 	.logo-section {
+		@media (min-width: 768px) {
+			grid-column: 1/-1;
+			order: 1;
+		}
 	}
 
 	.contact {
+		@media (min-width: 768px) {
+			grid-column: 1;
+			order: 2;
+		}
 	}
 
 	.contact > :global(.contact-btn) {
 		width: 100%;
+		max-width: 44ch;
 		color: var(--clr-text-inverse);
 		border-color: var(--clr-accent);
 		margin-top: 1rem;
@@ -110,7 +133,37 @@
 		}
 	}
 
-	.catch-phrase {
+	.navigation {
+		display: none;
+
+		& > ul {
+			display: flex;
+			gap: 2rem;
+			margin: 0;
+			padding: 0;
+
+			& > li {
+				& > button {
+					margin: 0;
+					background-color: transparent;
+					border: none;
+					cursor: pointer;
+					font-size: 1.2rem;
+					color: var(--clr-white);
+					padding: 0;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+
+		@media (min-width: 768px) {
+			display: block;
+			grid-column: 2;
+			order: 3;
+		}
 	}
 
 	.actions {
@@ -130,12 +183,18 @@
 				}
 			}
 		}
+
+		@media (min-width: 768px) {
+			grid-column: 2;
+			order: 5;
+			align-self: flex-end;
+		}
 	}
 
 	.copyright {
 		& > .links {
 			display: flex;
-			gap: 2rem;
+			gap: 4rem;
 			margin: 0 0 1rem;
 
 			& > li {
@@ -147,6 +206,7 @@
 					font-size: 1.2rem;
 					text-decoration: underline;
 					color: var(--clr-white);
+					padding: 0;
 				}
 			}
 		}
@@ -154,6 +214,11 @@
 		& > small {
 			margin-top: 2rem;
 			color: var(--clr-text-secondary);
+		}
+
+		@media (min-width: 768px) {
+			grid-column: 1;
+			order: 4;
 		}
 	}
 </style>

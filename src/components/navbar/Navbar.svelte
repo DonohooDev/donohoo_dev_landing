@@ -232,6 +232,7 @@
 		display: grid;
 		grid-auto-rows: auto 1fr auto;
 		overflow-y: scroll;
+		overscroll-behavior: contain;
 		gap: 2rem;
 
 		@media screen and (min-width: 768px) {
