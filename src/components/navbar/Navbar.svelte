@@ -130,6 +130,7 @@
 		color: var(--clr-text);
 		align-content: center;
 		padding-block: 0;
+		padding-inline: 2rem;
 		height: var(--nav-height);
 		background-color: hsl(from var(--clr-bg) h s l / 0.85);
 		backdrop-filter: blur(0.7rem);

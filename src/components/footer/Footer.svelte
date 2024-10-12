@@ -82,6 +82,7 @@
 	.main-footer {
 		background-color: var(--clr-primary-dark);
 		color: var(--clr-white);
+		padding: 2rem;
 
 		& p {
 			margin: 0;

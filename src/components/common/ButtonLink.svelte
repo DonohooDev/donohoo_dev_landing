@@ -61,7 +61,7 @@
 		&.btn-text {
 			background-color: transparent;
 			border: 2px solid transparent;
-			color: var(--clr-primary);
+			color: var(--clr-text);
 
 			&:hover {
 				border: 2px solid var(--clr-primary);
