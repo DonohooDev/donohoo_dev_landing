@@ -1,14 +1,19 @@
 <script>
 	import ButtonLink from "$components/common/ButtonLink.svelte";
+	import Integrations from "./assets/Integrations.svelte";
+	import LandingPage from "./assets/LandingPage.svelte";
+	import Devices from "./assets/Devices.svelte";
 </script>
 
 <section class="container section-spacing services">
-	<h2 id="services">Empowering Your Digital Presence</h2>
-	<p>
-		At Donohoo Dev, we offer a comprehensive range of services to help businesses establish a
-		strong digital presence and achieve their goals. Our expertise spans full-stack development,
-		e-commerce solutions, internal tools, and performance optimization.
-	</p>
+	<header class="header-margin">
+		<h2 id="services">Empowering Your Digital Presence</h2>
+		<p>
+			At Donohoo Dev, we offer a comprehensive range of services to help businesses establish
+			a strong digital presence and achieve their goals. Our expertise spans full-stack
+			development, e-commerce solutions, internal tools, and performance optimization.
+		</p>
+	</header>
 
 	<div class="service-sections">
 		<div class="service">
@@ -21,7 +26,7 @@
 					seamless, high-performance solutions that engage users and drive results.
 				</p>
 			</div>
-			<img src="https://via.placeholder.com/250" alt="Full-Stack Development" />
+			<Devices />
 		</div>
 
 		<div class="service">
@@ -35,7 +40,7 @@
 					and boost conversions.
 				</p>
 			</div>
-			<img src="https://via.placeholder.com/250" alt="Full-Stack Development" />
+			<LandingPage />
 		</div>
 
 		<div class="service">
@@ -43,25 +48,20 @@
 				<h3>Internal Tools & Integrations</h3>
 				<p>
 					We develop custom internal tools that streamline your workflows, automate tasks,
-					and enhance productivity. Whether you need a powerful CMS like Sanity or a
-					robust e-commerce platform like Shopify, we've got you covered. Our solutions
-					are tailored to your unique needs, ensuring seamless integration and maximum
-					efficiency.
+					and enhance productivity. Whether you need a powerful CMS or a robust e-commerce
+					platform, we've got you covered. Our solutions are tailored to your unique
+					needs, ensuring seamless integration and maximum efficiency.
 				</p>
 			</div>
-			<img src="https://via.placeholder.com/250" alt="Full-Stack Development" />
+			<Integrations />
 		</div>
 	</div>
 </section>
 
 <style scoped>
-	.services {
-	}
-
 	.service-sections {
 		display: grid;
-		gap: 2rem;
-		margin-top: 4rem;
+		gap: 8rem;
 		max-width: 400px;
 		margin-inline: auto;
 
@@ -69,23 +69,36 @@
 			max-width: none;
 		}
 
+		@media (min-width: 1024px) {
+			gap: 12rem;
+		}
+
 		& > .service {
 			display: grid;
-			gap: 2rem;
 			justify-items: center;
+			gap: 2rem;
 
 			@media (min-width: 768px) {
 				grid-template-columns: 1fr 1fr;
-				align-items: flex-start;
+				align-items: center;
 				justify-items: space-between;
+			}
 
+			&:nth-child(1) {
+				& > svg {
+					padding: 2rem;
+					margin-block: -6rem;
+				}
+			}
+
+			@media (min-width: 768px) {
 				&:nth-child(2n) {
 					& > .description {
 						grid-row: 2;
 						grid-column: 2;
 					}
 
-					& > img {
+					& > svg {
 						grid-row: 2;
 						grid-column: 1;
 					}

@@ -90,15 +90,15 @@
 
 		& > .container {
 			display: grid;
-			gap: 2rem;
+			gap: 4rem;
 
 			@media (min-width: 768px) {
 				grid-template-columns: 1fr 1fr;
-				gap: 3rem;
+				gap: 5rem;
 			}
 
 			@media (min-width: 1200px) {
-				gap: 4rem;
+				gap: 6rem;
 			}
 		}
 	}
