@@ -6,6 +6,7 @@
 	import ButtonLink from "$components/common/ButtonLink.svelte";
 	import HomeAboutUs from "./components/HomeAboutUs.svelte";
 	import HomeServices from "./components/HomeServices.svelte";
+	import DigitalLandscape from "./components/assets/DigitalLandscape.svelte";
 </script>
 
 <header class="full-width-container section-spacing">
@@ -21,7 +22,8 @@
 		</div>
 
 		<div class="brand-logo">
-			<PrimaryFlushLogo />
+			<DigitalLandscape />
+			<!-- <PrimaryFlushLogo /> -->
 		</div>
 	</div>
 </header>

@@ -1,4 +1,3 @@
-<!-- Generator: Adobe Illustrator 27.5.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg
 	version="1.1"
 	xmlns="http://www.w3.org/2000/svg"
