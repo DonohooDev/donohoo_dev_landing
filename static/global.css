@@ -6,9 +6,9 @@
 	--clr-accent: hsl(149 56% 77%);
 	--clr-white: hsl(153 0% 95%);
 	--clr-black: hsl(153 5% 5%);
-	--clr-gray: hsl(153 5% 45%);
-	--clr-gray-light: hsl(153 5% 60%);
-	--clr-gray-dark: hsl(153 5% 30%);
+	--clr-gray: hsl(153 5% 40%);
+	--clr-gray-light: hsl(153 5% 75%);
+	--clr-gray-dark: hsl(153 5% 15%);
 	--clr-error: hsl(0 100% 50%);
 	--clr-success: hsl(120 100% 50%);
 	--clr-warning: hsl(45 100% 50%);
@@ -17,6 +17,7 @@
 	--clr-text-inverse: var(--clr-white);
 	--clr-text-secondary: var(--clr-gray);
 	--clr-bg: var(--clr-white);
+	--clr-bg-contrast: var(--clr-gray-light);
 
 	--section-spacing: clamp(4rem, 3vw, 6rem);
 
@@ -108,6 +109,7 @@ body {
 		--clr-text: var(--clr-white);
 		--clr-text-inverse: var(--clr-black);
 		--clr-bg: var(--clr-black);
+		--clr-bg-contrast: var(--clr-gray-dark);
 
 		color-scheme: dark;
 	}

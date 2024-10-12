@@ -42,8 +42,8 @@
 		</div>
 
 		<div class="card">
-			<i class="fa-duotone fa-solid fa-handshake icon"></i>
-			<h3>Collaboration and Transparency</h3>
+			<i class="fa-duotone fa-solid fa-ear-listen icon"></i>
+			<h3>We Hear You</h3>
 			<p>
 				We believe in collaboration and open communication, building strong partnerships
 				that lead to successful outcomes.
@@ -59,14 +59,13 @@
 			</p>
 		</div>
 
-		<ButtonLink variant="inverted" size="lg" href="/about">Learn more about us</ButtonLink>
+		<ButtonLink variant="text" size="lg" href="/about">Learn more</ButtonLink>
 	</div>
 </section>
 
 <style scoped>
 	.who-we-are {
-		background-color: var(--clr-primary);
-		color: var(--clr-text-inverse);
+		background-color: var(--clr-bg-contrast);
 		text-align: center;
 
 		@media (min-width: 768px) {
@@ -98,20 +97,19 @@
 			& > .card {
 				background-color: var(--clr-bg);
 				border-radius: 1rem;
-				padding: 2rem;
+				padding: 3rem;
 				text-align: left;
-				box-shadow: 0 0 1.25rem 0 hsl(from var(--clr-text) h s l / 0.3);
+				box-shadow: 0 0 1.25rem 0 hsl(from var(--clr-gray) h s l / 0.5);
 
 				& > .icon {
 					font-size: clamp(3rem, 8vw, 4rem);
-					color: var(--clr-primary);
+					color: var(--clr-secondary);
 				}
 
 				& > h3 {
 					color: var(--clr-primary);
 					margin-top: 2rem;
 					font-size: var(--font-size-h4);
-					text-wrap: nowrap;
 				}
 
 				& > p {
@@ -124,13 +122,6 @@
 
 	.who-we-are-cards > :global(.btn) {
 		grid-column: 2;
-		background-color: var(--clr-accent);
-		color: var(--clr-text);
-
-		&:hover {
-			background-color: var(--clr-text-inverse);
-			color: var(--clr-text);
-		}
 	}
 
 	.main-header {

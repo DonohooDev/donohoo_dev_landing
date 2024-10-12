@@ -119,13 +119,12 @@
 	.contact > :global(.contact-btn) {
 		width: 100%;
 		max-width: 38ch;
-		color: var(--clr-accent);
-		border-color: var(--clr-accent);
+		color: var(--clr-secondary);
+		border-color: var(--clr-secondary);
 		margin-top: 1rem;
 
 		&:hover {
-			background-color: var(--clr-accent);
-			color: var(--clr-primary-dark);
+			background-color: var(--clr-secondary);
 		}
 
 		@media (min-width: 768px) {
@@ -180,10 +179,10 @@
 
 			& > li {
 				& > a {
-					color: var(--clr-accent);
+					color: var(--clr-secondary);
 
 					&:hover {
-						color: var(--clr-gray-dark);
+						color: var(--clr-accent);
 					}
 				}
 			}

@@ -40,7 +40,7 @@
 		&.btn-primary {
 			background-color: var(--clr-primary);
 			border: 2px solid var(--clr-primary);
-			color: var(--clr-text-inverse);
+			color: var(--clr-white);
 
 			&:hover {
 				background-color: var(--clr-bg);
@@ -55,7 +55,7 @@
 
 			&:hover {
 				background-color: var(--clr-primary);
-				color: var(--clr-text-inverse);
+				color: var(--clr-white);
 			}
 		}
 
@@ -76,7 +76,7 @@
 
 			&:hover {
 				background-color: var(--clr-primary);
-				color: var(--clr-text-inverse);
+				color: var(--clr-white);
 			}
 		}
 
