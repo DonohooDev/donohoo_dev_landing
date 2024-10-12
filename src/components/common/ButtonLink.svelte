@@ -1,16 +1,15 @@
 <script lang="ts">
 	import type { SvelteHTMLElements } from "svelte/elements";
-	type $$restProps = Omit<SvelteHTMLElements["button"], "onClick">;
+	type $$restProps = SvelteHTMLElements["a"];
 
-	export let clickHandler: (e: MouseEvent) => void = () => {};
 	export let variant: "primary" | "inverted" | "text" | "outlined" = "primary";
 	export let size: "sm" | "md" | "lg" = "md";
 	const buttonClass = `btn btn-${variant} btn-${size}`;
 </script>
 
-<button {...$$restProps} class={`${buttonClass} ${$$restProps.class}`} on:click={clickHandler}>
+<a href="/" {...$$restProps} class={`${buttonClass} ${$$restProps.class}`}>
 	<slot />
-</button>
+</a>
 
 <style>
 	.btn {

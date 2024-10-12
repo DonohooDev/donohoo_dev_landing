@@ -9,7 +9,7 @@
 	import { isMobileMenuOpen, toggleMobileMenu } from "$stores/mobile-menu.store";
 </script>
 
-<header class="full-width-breakout-container navigation">
+<header class="full-width-container navigation">
 	<div class="container">
 		<div class="main-nav">
 			<button class="nav-logo" on:click={() => toggleMobileMenu("/", false)}>

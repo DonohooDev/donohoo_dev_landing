@@ -1,5 +1,6 @@
 :root {
 	--nav-height: 7rem;
+	--clr-primary-dark: hsl(153 39% 10%);
 	--clr-primary: hsl(153 39% 30%);
 	--clr-secondary: hsl(153 39% 41%);
 	--clr-accent: hsl(149 56% 77%);
@@ -16,6 +17,15 @@
 	--clr-text-inverse: var(--clr-white);
 	--clr-text-secondary: var(--clr-gray);
 	--clr-bg: var(--clr-white);
+
+	--section-spacing: clamp(4rem, 3vw, 6rem);
+
+	--font-size-h1: clamp(3.4rem, 5vw, 3.8rem);
+	--font-size-h2: clamp(3rem, 4vw, 3.25rem);
+	--font-size-h3: clamp(2.4rem, 3vw, 2.6rem);
+	--font-size-h4: clamp(2rem, 2.5vw, 2.25rem);
+	--font-size-h5: clamp(1.8rem, 2vw, 2rem);
+	--font-size-h6: clamp(1.6rem, 1.8vw, 1.75rem);
 
 	/* primary: "#001f24",
     secondary: "#3f906b",
@@ -125,10 +135,13 @@ ul {
 	padding-inline-start: 0;
 }
 
+h1 {
+	color: var(--clr-primary);
+}
+
 h1,
 h2,
 h3 {
-	color: var(--clr-primary);
 	font-weight: 700;
 }
 
@@ -143,32 +156,32 @@ h6 {
 }
 
 h1 {
-	font-size: clamp(3.4rem, 5vw, 4rem);
+	font-size: var(--font-size-h1);
 	letter-spacing: -0.02em;
 }
 
 h2 {
-	font-size: clamp(3rem, 4vw, 3.4rem);
+	font-size: var(--font-size-h2);
 	letter-spacing: -0.01em;
 }
 
 h3 {
-	font-size: clamp(2.4rem, 3vw, 2.8rem);
+	font-size: var(--font-size-h3);
 	letter-spacing: -0.005em;
 }
 
 h4 {
-	font-size: clamp(2rem, 2.5vw, 2.4rem);
+	font-size: var(--font-size-h4);
 	letter-spacing: 0;
 }
 
 h5 {
-	font-size: clamp(1.8rem, 2vw, 2rem);
+	font-size: var(--font-size-h5);
 	letter-spacing: 0.005em;
 }
 
 h6 {
-	font-size: clamp(1.6rem, 1.8vw, 1.8rem);
+	font-size: var(--font-size-h6);
 	letter-spacing: 0.01em;
 }
 
@@ -182,17 +195,38 @@ a {
 	}
 }
 
+/* section,
+section.container,
+section.breakout-container,
+section.full-width-container {
+	margin-top: clamp(4rem, 3vw, 6rem);
+	padding-block: clamp(4rem, 3vw, 6rem);
+} */
+
 .subtitle {
 	font-size: clamp(1.6rem, 1.8vw, 1.9rem);
 	font-weight: 400;
 	color: var(--clr-text-secondary);
 }
 
+/* .section-title {
+	text-transform: uppercase;
+	font-size: clamp(1.5rem, 1.6vw, 1.7rem);
+	font-weight: 500;
+	margin: 0;
+	padding: 0;
+} */
+
+.section-spacing {
+	margin-block: var(--section-spacing) !important;
+	padding-block: var(--section-spacing) !important;
+}
+
 .content-grid {
 	display: grid;
 	grid-template-columns:
-		[full-width-start] 1fr [breakout-start] 80px [content-start] minmax(min-content, 800px)
-		[content-end] 80px [breakout-end] 1fr [full-width-end];
+		[full-width-start] 1fr [breakout-start] 100px [content-start] minmax(min-content, 1000px)
+		[content-end] 100px [breakout-end] 1fr [full-width-end];
 	align-content: flex-start;
 }
 

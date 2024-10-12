@@ -2,18 +2,20 @@
 	import { goto } from "$app/navigation";
 	import Button from "$components/common/Button.svelte";
 	import LogoHome from "$assets/logos/primary/donohoo_dev_primary_flush_t.svg";
-	import Squiggle from "$assets/backgrounds/underline.svg";
 	import PrimaryFlushLogo from "$components/common/PrimaryFlushLogo.svelte";
+	import ButtonLink from "$components/common/ButtonLink.svelte";
 </script>
 
-<header class="full-width-container">
-	<div class="container">
+<header class="full-width-container section-spacing">
+	<div class="container main-header">
 		<div>
 			<h1 id="welcome">Transforming Ideas into <span>Innovation</span></h1>
 			<p class="subtitle">
 				Our expert team specializes in crafting tailored, full-stack solutions that drive
 				performance, enhance user experience, and propel your business forward.
 			</p>
+
+			<ButtonLink variant="primary" size="lg" href="/contact">Lets talk</ButtonLink>
 		</div>
 
 		<div class="brand-logo">
@@ -22,12 +24,116 @@
 	</div>
 </header>
 
+<section class="breakout-container who-we-are section-spacing">
+	<h2 id="innovators">Innovators at Heart</h2>
+	<p>
+		At Donohoo Dev, we're more than just a development company. We're a team of passionate
+		innovators dedicated to transforming ideas into powerful digital solutions.
+	</p>
+
+	<div class="who-we-are-cards">
+		<div class="card">
+			<i class="fa-duotone fa-solid fa-laptop-code icon"></i>
+			<h3>Passion Meets Expertise</h3>
+			<p>
+				Our team combines deep technical expertise with creative problem-solving, delivering
+				innovative solutions for every project.
+			</p>
+		</div>
+
+		<div class="card">
+			<i class="fa-duotone fa-solid fa-handshake icon"></i>
+			<h3>Collaboration and Transparency</h3>
+			<p>
+				We believe in collaboration and open communication, building strong partnerships
+				that lead to successful outcomes.
+			</p>
+		</div>
+
+		<div class="card">
+			<i class="fa-duotone fa-solid fa-bullseye-arrow icon"></i>
+			<h3>Driving Your Success</h3>
+			<p>
+				Your success is our top priority. We deliver high-quality solutions that drive your
+				business forward.
+			</p>
+		</div>
+
+		<ButtonLink variant="inverted" size="lg" href="/about">Learn more about us</ButtonLink>
+	</div>
+</section>
+
 <style scoped>
-	header {
-		margin-top: 2em;
+	.who-we-are {
+		background-color: var(--clr-primary);
+		color: var(--clr-text-inverse);
+		text-align: center;
+
+		@media (min-width: 768px) {
+			border-radius: 1rem;
+			padding: 4rem 2rem;
+		}
+
+		& > h2,
+		& > p {
+			margin-inline: auto;
+			max-width: 80ch;
+		}
+
+		& > .who-we-are-cards {
+			margin-top: 4rem;
+			display: grid;
+			gap: 4rem;
+			grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+			max-width: 50rem;
+			margin-inline: auto;
+
+			@media (min-width: 1024px) {
+				max-width: fit-content;
+				padding: 2rem;
+				grid-template-columns: repeat(3, 1fr);
+				gap: 6rem;
+			}
+
+			& > .card {
+				background-color: var(--clr-bg);
+				border-radius: 1rem;
+				padding: 2rem;
+				text-align: left;
+				box-shadow: 0 0 1.25rem 0 hsl(from var(--clr-text) h s l / 0.3);
+
+				& > .icon {
+					font-size: clamp(3rem, 8vw, 4rem);
+					color: var(--clr-primary);
+				}
+
+				& > h3 {
+					color: var(--clr-primary);
+					margin-top: 2rem;
+					font-size: var(--font-size-h4);
+					text-wrap: nowrap;
+				}
+
+				& > p {
+					color: var(--clr-text);
+					margin-top: 1rem;
+				}
+			}
+		}
 	}
 
-	.container {
+	.who-we-are-cards > :global(.btn) {
+		grid-column: 2;
+		background-color: var(--clr-accent);
+		color: var(--clr-text);
+
+		&:hover {
+			background-color: var(--clr-text-inverse);
+			color: var(--clr-text);
+		}
+	}
+
+	.main-header {
 		display: grid;
 
 		@media (min-width: 768px) {
@@ -35,6 +141,11 @@
 			gap: 8rem;
 			align-items: center;
 		}
+	}
+
+	.main-header :global(.btn) {
+		display: inline-block;
+		margin-top: 2rem;
 	}
 
 	#welcome {

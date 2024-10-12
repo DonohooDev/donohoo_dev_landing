@@ -25,13 +25,7 @@
 			<p>Navigation</p>
 			<ul>
 				<li>
-					<button role="link" on:click={() => goto("/")}>Home</button>
-				</li>
-				<li>
-					<button role="link" on:click={() => goto("/about")}>About</button>
-				</li>
-				<li>
-					<button role="link" on:click={() => goto("/contact")}>Contact</button>
+					<a href="/">Home</a>
 				</li>
 			</ul>
 		</div>
@@ -70,10 +64,10 @@
 		<div class="copyright">
 			<ul class="links">
 				<li>
-					<button role="link" on:click={() => goto("/")}>Terms of Use</button>
+					<a href="/terms-of-use">Terms of Use</a>
 				</li>
 				<li>
-					<button role="link" on:click={() => goto("/")}>Privacy Policy</button>
+					<a href="/privacy">Privacy Policy</a>
 				</li>
 			</ul>
 
@@ -86,8 +80,7 @@
 
 <style scoped>
 	.main-footer {
-		--footer-bg: hsl(from var(--clr-primary) h s 12.5%);
-		background-color: var(--footer-bg);
+		background-color: var(--clr-primary-dark);
 		color: var(--clr-white);
 
 		& p {
@@ -125,14 +118,18 @@
 
 	.contact > :global(.contact-btn) {
 		width: 100%;
-		max-width: 44ch;
+		max-width: 38ch;
 		color: var(--clr-accent);
 		border-color: var(--clr-accent);
 		margin-top: 1rem;
 
 		&:hover {
 			background-color: var(--clr-accent);
-			color: var(--footer-bg);
+			color: var(--clr-primary-dark);
+		}
+
+		@media (min-width: 768px) {
+			max-width: 42ch;
 		}
 	}
 
@@ -154,14 +151,10 @@
 			justify-content: flex-end;
 
 			& > li {
-				& > button {
+				& > a {
 					margin: 0;
-					background-color: transparent;
-					border: none;
-					cursor: pointer;
 					font-size: 1.2rem;
 					color: var(--clr-white);
-					padding: 0;
 
 					&:hover {
 						text-decoration: underline;
@@ -211,15 +204,11 @@
 			margin: 0 0 1rem;
 
 			& > li {
-				& > button {
+				& > a {
 					margin: 0;
-					background-color: transparent;
-					border: none;
-					cursor: pointer;
 					font-size: 1.2rem;
 					text-decoration: underline;
 					color: var(--clr-white);
-					padding: 0;
 				}
 			}
 		}
