@@ -12,7 +12,7 @@
 		<slot />
 	</main>
 
-	<div class="content-grid">
+	<div class="content-grid footer">
 		<Footer />
 	</div>
 </div>

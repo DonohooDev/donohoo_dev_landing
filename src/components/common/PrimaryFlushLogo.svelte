@@ -227,7 +227,7 @@
 
 <style>
 	svg {
-		filter: drop-shadow(0 0 2.5rem hsl(from var(--clr-primary) h s l / 0.5));
+		filter: drop-shadow(0 0 2rem hsl(from var(--clr-accent) h s 10% / 0.35));
 	}
 
 	.cls-1,
@@ -236,7 +236,6 @@
 	.cls-4 {
 		stroke-width: 0px;
 	}
-
 	.cls-1 {
 		fill: var(--clr-primary);
 	}
@@ -244,29 +243,19 @@
 		fill: var(--clr-accent);
 	}
 	.cls-3 {
-		fill: var(--clr-primary);
+		fill: var(--clr-accent);
 	}
 	.cls-4 {
-		fill: var(--clr-text);
+		fill: hsl(from var(--clr-primary) h s 12.5%);
 	}
 
 	:global([data-theme="dark"]) {
 		& svg {
-			/* filter: drop-shadow(0 0 2.5rem hsl(from var(--clr-primary) h s l / 0.25)); */
-		}
-
-		& .cls-1 {
-		}
-
-		& .cls-2 {
-		}
-
-		& .cls-3 {
+			filter: drop-shadow(0 0 2rem hsl(from var(--clr-text-secondary) h s l / 0.15));
 		}
 
 		& .cls-4 {
 			fill: var(--clr-bg);
-			/* filter: drop-shadow(0 0 5rem hsl(from var(--clr-primary) h s l / 0.6)); */
 		}
 	}
 </style>

@@ -84,9 +84,10 @@
 	</div>
 </footer>
 
-<style>
+<style scoped>
 	.main-footer {
-		background-color: hsl(from var(--clr-primary) h s 12.5%);
+		--footer-bg: hsl(from var(--clr-primary) h s 12.5%);
+		background-color: var(--footer-bg);
 		color: var(--clr-white);
 
 		& p {
@@ -125,13 +126,13 @@
 	.contact > :global(.contact-btn) {
 		width: 100%;
 		max-width: 44ch;
-		color: var(--clr-text-inverse);
+		color: var(--clr-accent);
 		border-color: var(--clr-accent);
 		margin-top: 1rem;
 
 		&:hover {
 			background-color: var(--clr-accent);
-			color: var(--clr-gray);
+			color: var(--footer-bg);
 		}
 	}
 
@@ -189,7 +190,7 @@
 					color: var(--clr-accent);
 
 					&:hover {
-						color: var(--clr-text-inverse);
+						color: var(--clr-gray-dark);
 					}
 				}
 			}
@@ -226,7 +227,7 @@
 		& > small {
 			font-size: 1.125rem;
 			margin-top: 2rem;
-			color: var(--clr-text-secondary);
+			color: var(--clr-gray);
 		}
 
 		@media (min-width: 768px) {

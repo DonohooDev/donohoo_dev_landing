@@ -23,6 +23,10 @@
 </header>
 
 <style scoped>
+	header {
+		margin-top: 2em;
+	}
+
 	.container {
 		display: grid;
 
@@ -55,8 +59,7 @@
 
 		@media (min-width: 768px) {
 			display: block;
-			margin-top: 4em;
-			padding: 2rem;
+			margin: 2rem;
 		}
 	}
 </style>
