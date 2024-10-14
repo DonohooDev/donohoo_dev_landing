@@ -1,17 +1,15 @@
-<script>
-	import ButtonLink from "$components/common/ButtonLink.svelte";
-</script>
-
 <section class="breakout-container section-spacing who-we-are">
-	<h2 id="innovators">Innovators at Heart</h2>
-	<p>
-		At Donohoo Dev, we're more than just a development company. We're a team of passionate
-		innovators dedicated to transforming ideas into powerful digital solutions.
-	</p>
+	<header>
+		<h2 id="innovators">Innovators at Heart</h2>
+		<p>
+			At Donohoo Dev, we're more than just a development company. We're a team of passionate
+			innovators dedicated to transforming ideas into powerful digital solutions.
+		</p>
+	</header>
 
 	<div class="who-we-are-cards">
 		<div class="card">
-			<i class="fa-duotone fa-solid fa-laptop-code icon"></i>
+			<i class="fa-duotone fa-solid fa-laptop-code icon" />
 			<h3>Passion Meets Expertise</h3>
 			<p>
 				Our team combines deep technical expertise with creative problem-solving, delivering
@@ -20,7 +18,7 @@
 		</div>
 
 		<div class="card">
-			<i class="fa-duotone fa-solid fa-ear-listen icon"></i>
+			<i class="fa-duotone fa-solid fa-ear-listen icon" />
 			<h3>We Hear You</h3>
 			<p>
 				We believe in collaboration and open communication, building strong partnerships
@@ -29,36 +27,33 @@
 		</div>
 
 		<div class="card">
-			<i class="fa-duotone fa-solid fa-bullseye-arrow icon"></i>
+			<i class="fa-duotone fa-solid fa-bullseye-arrow icon" />
 			<h3>Driving Your Success</h3>
 			<p>
 				Your success is our top priority. We deliver high-quality solutions that drive your
 				business forward.
 			</p>
 		</div>
-
-		<ButtonLink variant="text" size="lg" href="/about">Learn more</ButtonLink>
 	</div>
 </section>
 
 <style scoped>
 	.who-we-are {
-		background-color: var(--clr-bg-contrast);
+		background-color: hsl(from var(--clr-primary) h s l / 0.4);
 		text-align: center;
+		display: grid;
+		gap: 6rem;
 
 		@media (min-width: 768px) {
 			border-radius: 1rem;
-			padding: 4rem 2rem;
 		}
 
-		& > h2,
-		& > p {
+		& > header {
 			margin-inline: auto;
 			max-width: 70ch;
 		}
 
 		& > .who-we-are-cards {
-			margin-top: 4rem;
 			display: grid;
 			gap: 4rem;
 			grid-template-columns: 1fr;
@@ -82,14 +77,13 @@
 				}
 
 				& > .icon {
-					font-size: clamp(3rem, 8vw, 4rem);
-					color: var(--clr-secondary);
+					font-size: clamp(4rem, 8vw, 5rem);
+					color: var(--clr-primary);
 				}
 
 				& > h3 {
-					color: var(--clr-primary);
-					margin-top: 2rem;
-					font-size: var(--font-size-h4);
+					margin-top: 3rem;
+					font-size: var(--font-size-h5);
 				}
 
 				& > p {
@@ -97,12 +91,6 @@
 					margin-top: 1rem;
 				}
 			}
-		}
-	}
-
-	.who-we-are-cards > :global(.btn) {
-		@media (min-width: 1024px) {
-			grid-column: 2;
 		}
 	}
 </style>

@@ -1,5 +1,4 @@
 <script>
-	import ButtonLink from "$components/common/ButtonLink.svelte";
 	import Integrations from "./assets/Integrations.svelte";
 	import LandingPage from "./assets/LandingPage.svelte";
 	import Devices from "./assets/Devices.svelte";
@@ -61,7 +60,7 @@
 <style scoped>
 	.service-sections {
 		display: grid;
-		gap: 8rem;
+		gap: 4rem;
 		max-width: 400px;
 		margin-inline: auto;
 
@@ -70,7 +69,7 @@
 		}
 
 		@media (min-width: 1024px) {
-			gap: 12rem;
+			gap: 8rem;
 		}
 
 		& > .service {
@@ -88,7 +87,7 @@
 			&:nth-child(1) {
 				& > svg {
 					padding: 2rem;
-					margin-block: -6rem;
+					margin-block: -8rem;
 				}
 			}
 

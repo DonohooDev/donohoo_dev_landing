@@ -1,13 +1,10 @@
 <script>
-	import { goto } from "$app/navigation";
-	import Button from "$components/common/Button.svelte";
-	import LogoHome from "$assets/logos/primary/donohoo_dev_primary_flush_t.svg";
-	import PrimaryFlushLogo from "$components/common/PrimaryFlushLogo.svelte";
 	import ButtonLink from "$components/common/ButtonLink.svelte";
 	import HomeAboutUs from "./components/HomeAboutUs.svelte";
 	import HomeServices from "./components/HomeServices.svelte";
 	import DigitalLandscape from "./components/assets/DigitalLandscape.svelte";
 	import HomeWebsitePotential from "./components/HomeWebsitePotential.svelte";
+	import HomeReady from "./components/HomeReady.svelte";
 </script>
 
 <header class="full-width-container section-spacing">
@@ -24,16 +21,17 @@
 
 		<div class="brand-logo">
 			<DigitalLandscape />
-			<!-- <PrimaryFlushLogo /> -->
 		</div>
 	</div>
 </header>
 
-<HomeAboutUs />
-
 <HomeWebsitePotential />
 
 <HomeServices />
+
+<HomeAboutUs />
+
+<HomeReady />
 
 <style scoped>
 	.main-header {

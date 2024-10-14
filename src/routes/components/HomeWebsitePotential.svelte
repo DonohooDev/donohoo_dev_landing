@@ -1,7 +1,7 @@
-<section class="full-width-container potential">
+<section class="full-width-breakout-container section-spacing potential">
 	<div class="container">
 		<header class="header-margin">
-			<h2 id="potential">Unlocking Your Website's Potential</h2>
+			<h2 id="potential">Unlocking Your Website's Full Potential</h2>
 			<p>At Donohoo Dev, we focus on the key elements that drive your online success.</p>
 		</header>
 
@@ -15,24 +15,19 @@
 			<li class="focus">
 				<i class="fa-regular fa-gauge-circle-bolt" />
 				<h3>Efficiency</h3>
-				<p>
-					Improving your website's visibility and search engine rankings for increased
-					organic traffic.
-				</p>
+				<p>Increasing your online visibility and search rankings for more traffic.</p>
 			</li>
 
 			<li class="focus">
 				<i class="fa-regular fa-universal-access" />
 				<h3>Accessibility</h3>
-				<p>
-					Ensuring your website is accessible to all users, regardless of their abilities.
-				</p>
+				<p>Creating inclusive websites that are usable by people of all abilities.</p>
 			</li>
 
 			<li class="focus">
 				<i class="fa-regular fa-chess" />
 				<h3>Strategic Development</h3>
-				<p>Leveraging technology and best practices to drive your business goals.</p>
+				<p>Aligning technology with best practices to achieve your business goals.</p>
 			</li>
 		</ul>
 	</div>
@@ -42,14 +37,6 @@
 	.potential {
 		background-color: var(--clr-primary-dark);
 		color: var(--clr-white);
-		padding-block: 4em;
-
-		& > .container {
-			@media (min-width: 768px) {
-				grid-column: full-width;
-				margin-inline: 8rem;
-			}
-		}
 	}
 
 	.focuses {
@@ -61,12 +48,10 @@
 		@media (min-width: 480px) {
 			grid-template-columns: 1fr 1fr;
 			gap: 4rem;
-			/* grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */
 		}
 
 		@media (min-width: 1080px) {
-			grid-template-columns: repeat(4, 250px);
-			/* grid-template-columns: 1fr 1fr 1fr 1fr; */
+			grid-template-columns: 1fr 1fr 1fr 1fr;
 			justify-content: space-between;
 		}
 
@@ -76,7 +61,7 @@
 		}
 
 		& h3 {
-			font-size: 1.8rem;
+			font-size: var(--font-size-h5);
 			text-wrap: nowrap;
 		}
 

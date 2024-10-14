@@ -82,7 +82,7 @@
 	.main-footer {
 		background-color: var(--clr-primary-dark);
 		color: var(--clr-white);
-		padding: 2rem;
+		padding: 4rem 2rem;
 
 		& p {
 			margin: 0;
@@ -94,11 +94,6 @@
 
 			@media (min-width: 768px) {
 				grid-template-columns: 1fr 1fr;
-				gap: 5rem;
-			}
-
-			@media (min-width: 1200px) {
-				gap: 6rem;
 			}
 		}
 	}
