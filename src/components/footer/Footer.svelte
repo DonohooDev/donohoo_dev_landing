@@ -67,7 +67,7 @@
 					<a href="/terms-of-use">Terms of Use</a>
 				</li>
 				<li>
-					<a href="/privacy">Privacy Policy</a>
+					<a href="/privacy-policy">Privacy Policy</a>
 				</li>
 			</ul>
 
@@ -213,8 +213,11 @@
 				& > a {
 					margin: 0;
 					font-size: var(--font-size-sm);
-					text-decoration: underline;
 					color: var(--clr-white);
+
+					&:hover {
+						text-decoration: underline;
+					}
 				}
 			}
 		}

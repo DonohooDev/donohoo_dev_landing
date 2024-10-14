@@ -60,7 +60,6 @@
 
 	#welcome {
 		color: var(--clr-text);
-		font-size: clamp(4rem, 8vw, 5.5rem);
 
 		& > span {
 			display: inline-block;

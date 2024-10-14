@@ -102,14 +102,16 @@
 								<button
 									class="mobile-menu-link"
 									role="link"
-									on:click={() => toggleMobileMenu()}>Terms of Use</button
+									on:click={() => toggleMobileMenu("terms-of-use")}
+									>Terms of Use</button
 								>
 							</li>
 							<li>
 								<button
 									class="mobile-menu-link"
 									role="link"
-									on:click={() => toggleMobileMenu()}>Privacy Policy</button
+									on:click={() => toggleMobileMenu("privacy-policy")}
+									>Privacy Policy</button
 								>
 							</li>
 						</ul>
