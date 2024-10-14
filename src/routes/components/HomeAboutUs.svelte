@@ -1,5 +1,5 @@
 <section class="breakout-container section-spacing who-we-are">
-	<header>
+	<header class="header-margin">
 		<h2 id="innovators">Innovators at Heart</h2>
 		<p>
 			At Donohoo Dev, we're more than just a development company. We're a team of passionate
@@ -42,7 +42,7 @@
 		background-color: hsl(from var(--clr-primary) h s l / 0.4);
 		text-align: center;
 		display: grid;
-		gap: 6rem;
+		/* gap: 6rem; */
 
 		@media (min-width: 768px) {
 			border-radius: 1rem;

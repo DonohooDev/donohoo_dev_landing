@@ -8,7 +8,7 @@
 	style="enable-background:new 0 0 500 500;"
 	xml:space="preserve"
 >
-	<g id="Background_Complete">
+	<g id="Background_Complete" style="display:none;">
 		<path
 			class="fill-gray-light"
 			d="M90.153,223.438c-5.228,3.334-9.776,7.728-13.289,12.837c-1.12,1.628-2.177,3.517-1.874,5.47

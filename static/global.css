@@ -27,6 +27,10 @@
 	--font-size-h4: clamp(2.25rem, 2.5vw, 2.5rem);
 	--font-size-h5: clamp(1.9rem, 2vw, 2.1rem);
 	--font-size-h6: clamp(1.7rem, 1.8vw, 1.8rem);
+	--font-size-lg: clamp(1.6rem, 3vw, 1.7rem);
+	--font-size-body: clamp(1.5rem, 1.8vw, 1.6rem);
+	--font-size-sm: clamp(1.4rem, 1.6vw, 1.5rem);
+	--font-size-caption: clamp(1.1rem, 1.4vw, 1.2rem);
 
 	/* primary: "#001f24",
     secondary: "#3f906b",
@@ -92,7 +96,7 @@ html {
 }
 
 body {
-	font-size: 1.6rem;
+	font-size: var(--font-size-body);
 	background-color: var(--clr-bg);
 	color: var(--clr-text);
 	margin: 0;

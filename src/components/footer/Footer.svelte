@@ -74,6 +74,17 @@
 			<small>
 				&copy; {new Date().getFullYear()} Donohoo Development, LLC. All rights reserved.
 			</small>
+			<small class="freepik-attribution">
+				Vectors designed by
+				<a
+					href="https://www.freepik.com/author/stories"
+					title="Storyset"
+					target="_blank"
+					rel="noopener noreferrer"
+				>
+					Storyset
+				</a>
+			</small>
 		</div>
 	</div>
 </footer>
@@ -130,9 +141,9 @@
 
 	.navigation {
 		display: none;
+		font-size: var(--font-size-sm);
 
 		& > p {
-			font-size: 1.5rem;
 			margin: 0 0 1rem;
 			text-decoration: underline;
 			text-align: right;
@@ -146,9 +157,9 @@
 			justify-content: flex-end;
 
 			& > li {
+				margin-top: 1rem;
 				& > a {
 					margin: 0;
-					font-size: 1.2rem;
 					color: var(--clr-white);
 
 					&:hover {
@@ -201,7 +212,7 @@
 			& > li {
 				& > a {
 					margin: 0;
-					font-size: 1.2rem;
+					font-size: var(--font-size-sm);
 					text-decoration: underline;
 					color: var(--clr-white);
 				}
@@ -209,9 +220,14 @@
 		}
 
 		& > small {
-			font-size: 1.125rem;
-			margin-top: 2rem;
+			display: block;
+			font-size: var(--font-size-caption);
 			color: var(--clr-gray);
+
+			&:first-of-type {
+				margin-top: 2rem;
+				margin-bottom: 1rem;
+			}
 		}
 
 		@media (min-width: 768px) {

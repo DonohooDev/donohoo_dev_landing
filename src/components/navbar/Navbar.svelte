@@ -1,12 +1,12 @@
 <script lang="ts">
 	import LogoSolid from "./NavbarLogo.svelte";
-	import FullLogo from "$assets/logos/primary/donohoo_dev_primary_flush_t.svg";
 	import { slide } from "svelte/transition";
 	import { quintInOut } from "svelte/easing";
 	import { goto } from "$app/navigation";
 	import NavbarThemeToggle from "./NavbarThemeToggle.svelte";
 	import NavbarMobileMenuButton from "./NavbarMobileMenuButton.svelte";
 	import { isMobileMenuOpen, toggleMobileMenu } from "$stores/mobile-menu.store";
+	import DigitalLandscape from "../../routes/components/assets/DigitalLandscape.svelte";
 </script>
 
 <header class="full-width-container navigation">
@@ -19,8 +19,9 @@
 			<nav class="desktop-menu-navigation">
 				<ul>
 					<li>
-						<button class="nav-link" role="link" on:click={() => goto("/")}>Home</button
-						>
+						<button class="nav-link" role="link" on:click={() => goto("/")}>
+							Home
+						</button>
 					</li>
 					<li>
 						<button class="nav-link" role="link" on:click={() => goto("/about")}>
@@ -92,7 +93,7 @@
 					</nav>
 
 					<div class="mobile-menu-divider">
-						<img src={FullLogo} alt="full brand primary logo" />
+						<DigitalLandscape />
 					</div>
 
 					<footer class="mobile-menu-footer">
@@ -191,7 +192,7 @@
 		}
 
 		& button {
-			font-size: 1.5rem;
+			font-size: var(--font-size-lg);
 			font-weight: 500;
 			color: var(--clr-text);
 		}
@@ -266,7 +267,6 @@
 			padding-block: 2rem;
 			width: 100%;
 			text-align: left;
-			font-size: 1.6rem;
 			font-weight: 400;
 		}
 	}
@@ -275,11 +275,16 @@
 		display: flex;
 		place-items: center;
 
-		& > img {
-			filter: drop-shadow(0 0 5rem hsl(from var(--clr-secondary) h s l / 0.6));
-			width: 80%;
-			max-width: 40rem;
+		& > svg {
+			filter: drop-shadow(0 0 5rem hsl(from var(--clr-primary) h s l / 0.5));
+			max-width: 50rem;
 			margin: auto;
+		}
+	}
+
+	:global([data-theme="dark"]) .mobile-menu-divider {
+		& > svg {
+			filter: drop-shadow(0 0 5rem hsl(from var(--clr-secondary) h s l / 0.5));
 		}
 	}
 

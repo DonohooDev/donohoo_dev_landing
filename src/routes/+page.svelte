@@ -9,18 +9,20 @@
 
 <header class="full-width-container section-spacing">
 	<div class="container main-header">
-		<div>
+		<div class="heading">
 			<h1 id="welcome">Transforming Ideas into <span>Innovation</span></h1>
 			<p class="subtitle">
 				Our expert team specializes in crafting tailored, full-stack solutions that drive
 				performance, enhance user experience, and propel your business forward.
 			</p>
-
-			<ButtonLink variant="primary" size="lg" href="/contact">Lets talk</ButtonLink>
 		</div>
 
-		<div class="brand-logo">
-			<DigitalLandscape />
+		<!-- <div class="brand-logo"> -->
+		<DigitalLandscape />
+		<!-- </div> -->
+
+		<div class="cta-btn">
+			<ButtonLink variant="primary" size="lg" href="/contact">Let's talk</ButtonLink>
 		</div>
 	</div>
 </header>
@@ -36,17 +38,37 @@
 <style scoped>
 	.main-header {
 		display: grid;
+		gap: 4rem;
+
+		/* & > .brand-logo {
+			order: -1;
+		} */
 
 		@media (min-width: 768px) {
+			justify-items: center;
+		}
+
+		@media (min-width: 1024px) {
 			grid-template-columns: 1fr 1fr;
-			gap: 8rem;
+			column-gap: 10rem;
+			justify-items: flex-start;
 			align-items: center;
+
+			& .cta-btn {
+				/* margin-top: -6vw; */
+			}
+		}
+
+		@media (min-width: 1300px) {
+			& .cta-btn {
+				margin-top: -8rem;
+			}
 		}
 	}
 
 	.main-header :global(.btn) {
-		display: inline-block;
-		margin-top: 2rem;
+		/* display: inline-block; */
+		/* margin-top: 2rem; */
 	}
 
 	#welcome {

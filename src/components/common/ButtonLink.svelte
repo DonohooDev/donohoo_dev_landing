@@ -16,24 +16,21 @@
 		font-weight: 500;
 		border-radius: 0.5rem;
 		cursor: pointer;
+		font-size: var(--font-size-sm);
+		padding: 0.65em 1.5em;
 		transition:
 			background-color 0.3s,
 			color 0.3s,
 			transform 0.2s ease;
 
-		&.btn-sm {
-			padding: 0.75rem 1.75em;
-			font-size: 1.2rem;
-		}
-
 		&.btn-md {
-			padding: 1rem 3rem;
-			font-size: 1.45rem;
+			font-size: var(--font-size-body);
+			padding-inline: 2em;
 		}
 
 		&.btn-lg {
-			padding: 1.25rem 4rem;
-			font-size: 1.6rem;
+			font-size: var(--font-size-lg);
+			padding-inline: 2.5em;
 		}
 
 		&.btn-primary {

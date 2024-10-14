@@ -1,7 +1,7 @@
 <script>
 	import Integrations from "./assets/Integrations.svelte";
 	import LandingPage from "./assets/LandingPage.svelte";
-	import Devices from "./assets/Devices.svelte";
+	import Developer from "./assets/Developer.svelte";
 </script>
 
 <section class="container section-spacing services">
@@ -25,7 +25,8 @@
 					seamless, high-performance solutions that engage users and drive results.
 				</p>
 			</div>
-			<Devices />
+
+			<Developer />
 		</div>
 
 		<div class="service">
@@ -39,6 +40,7 @@
 					and boost conversions.
 				</p>
 			</div>
+
 			<LandingPage />
 		</div>
 
@@ -52,6 +54,7 @@
 					needs, ensuring seamless integration and maximum efficiency.
 				</p>
 			</div>
+
 			<Integrations />
 		</div>
 	</div>
@@ -61,11 +64,8 @@
 	.service-sections {
 		display: grid;
 		gap: 4rem;
-		max-width: 400px;
-		margin-inline: auto;
 
 		@media (min-width: 768px) {
-			max-width: none;
 		}
 
 		@media (min-width: 1024px) {
@@ -75,24 +75,27 @@
 		& > .service {
 			display: grid;
 			justify-items: center;
-			gap: 2rem;
 
 			@media (min-width: 768px) {
 				grid-template-columns: 1fr 1fr;
 				align-items: center;
-				justify-items: space-between;
-				column-gap: 8rem;
-			}
+				column-gap: 4rem;
 
-			&:nth-child(1) {
-				& > svg {
-					padding: 2rem;
-					margin-block: -8rem;
+				&:not(:last-child) {
+					margin-bottom: 4rem;
 				}
 			}
 
+			@media (min-width: 1024px) {
+				column-gap: 8rem;
+			}
+
+			& > svg {
+				transform: scale(1.125);
+			}
+
 			@media (min-width: 768px) {
-				&:nth-child(2n) {
+				&:nth-child(even) {
 					& > .description {
 						grid-row: 2;
 						grid-column: 2;
