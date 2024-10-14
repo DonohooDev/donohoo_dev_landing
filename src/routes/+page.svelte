@@ -1,13 +1,13 @@
 <script>
 	import ButtonLink from "$components/common/ButtonLink.svelte";
-	import HomeAboutUs from "./components/HomeAboutUs.svelte";
-	import HomeServices from "./components/HomeServices.svelte";
-	import DigitalLandscape from "./components/assets/DigitalLandscape.svelte";
-	import HomeWebsitePotential from "./components/HomeWebsitePotential.svelte";
-	import HomeReady from "./components/HomeReady.svelte";
+	import HomeAboutUs from "$components/home/HomeAboutUs.svelte";
+	import HomeReady from "$components/home/HomeReady.svelte";
+	import HomeServices from "$components/home/HomeServices.svelte";
+	import HomeWebsitePotential from "$components/home/HomeWebsitePotential.svelte";
+	import DigitalLandscape from "../components/home/assets/DigitalLandscape.svelte";
 </script>
 
-<header class="full-width-container section-spacing">
+<header class="full-width-container section-spacing home">
 	<div class="container main-header">
 		<div class="heading">
 			<h1 id="welcome">Transforming Ideas into <span>Innovation</span></h1>
@@ -17,9 +17,7 @@
 			</p>
 		</div>
 
-		<!-- <div class="brand-logo"> -->
 		<DigitalLandscape />
-		<!-- </div> -->
 
 		<div class="cta-btn">
 			<ButtonLink variant="primary" size="lg" href="/contact">Let's talk</ButtonLink>
@@ -40,12 +38,7 @@
 		display: grid;
 		gap: 4rem;
 
-		/* & > .brand-logo {
-			order: -1;
-		} */
-
 		@media (min-width: 768px) {
-			justify-items: center;
 		}
 
 		@media (min-width: 1024px) {
@@ -53,22 +46,16 @@
 			column-gap: 10rem;
 			justify-items: flex-start;
 			align-items: center;
-
-			& .cta-btn {
-				/* margin-top: -6vw; */
-			}
 		}
 
-		@media (min-width: 1300px) {
-			& .cta-btn {
-				margin-top: -8rem;
-			}
+		@media (min-width: 1200px) {
+			row-gap: 0;
 		}
 	}
 
-	.main-header :global(.btn) {
-		/* display: inline-block; */
-		/* margin-top: 2rem; */
+	.heading {
+		grid-column: 1;
+		grid-row: 1;
 	}
 
 	#welcome {
@@ -88,12 +75,25 @@
 		}
 	}
 
-	.brand-logo {
+	.main-header > :global(svg) {
 		display: none;
+		grid-column: 2;
+		grid-row: 1;
 
-		@media (min-width: 768px) {
+		@media (min-width: 1028px) {
 			display: block;
-			margin: 2rem;
+		}
+	}
+
+	.cta-btn {
+		grid-column: 1;
+		grid-row: 2;
+
+		/* Custom breakpoint for when the button is too far away from the heading */
+		@media (min-width: 1300px) {
+			grid-column: 1;
+			grid-row: 1;
+			align-self: flex-end;
 		}
 	}
 </style>

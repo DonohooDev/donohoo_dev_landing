@@ -6,7 +6,7 @@
 	import NavbarThemeToggle from "./NavbarThemeToggle.svelte";
 	import NavbarMobileMenuButton from "./NavbarMobileMenuButton.svelte";
 	import { isMobileMenuOpen, toggleMobileMenu } from "$stores/mobile-menu.store";
-	import DigitalLandscape from "../../routes/components/assets/DigitalLandscape.svelte";
+	import DigitalLandscape from "../home/assets/DigitalLandscape.svelte";
 </script>
 
 <header class="full-width-container navigation">
