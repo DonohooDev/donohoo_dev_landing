@@ -7,6 +7,7 @@
 	import HomeAboutUs from "./components/HomeAboutUs.svelte";
 	import HomeServices from "./components/HomeServices.svelte";
 	import DigitalLandscape from "./components/assets/DigitalLandscape.svelte";
+	import HomeWebsitePotential from "./components/HomeWebsitePotential.svelte";
 </script>
 
 <header class="full-width-container section-spacing">
@@ -29,6 +30,8 @@
 </header>
 
 <HomeAboutUs />
+
+<HomeWebsitePotential />
 
 <HomeServices />
 

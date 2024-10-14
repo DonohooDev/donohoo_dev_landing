@@ -82,6 +82,7 @@
 				grid-template-columns: 1fr 1fr;
 				align-items: center;
 				justify-items: space-between;
+				column-gap: 8rem;
 			}
 
 			&:nth-child(1) {
