@@ -42,12 +42,14 @@
 	.focuses {
 		display: grid;
 		grid-auto-rows: 1fr;
-		gap: 2rem;
-		padding: 2rem 0;
+		gap: 4rem;
 
 		@media (min-width: 480px) {
 			grid-template-columns: 1fr 1fr;
-			gap: 4rem;
+		}
+
+		@media (min-width: 768px) {
+			gap: 8rem;
 		}
 
 		@media (min-width: 1080px) {

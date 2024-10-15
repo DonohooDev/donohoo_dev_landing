@@ -1,7 +1,4 @@
-<script>
-</script>
-
-<article class="container section-spacing terms">
+<article class="article-container section-spacing terms">
 	<header class="header-margin">
 		<h1>Terms of Use</h1>
 		<time datetime="2024-10-13">Last updated: October 14th, 2024</time>

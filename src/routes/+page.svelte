@@ -7,10 +7,12 @@
 	import DigitalLandscape from "../components/home/assets/DigitalLandscape.svelte";
 </script>
 
-<header class="full-width-container section-spacing home">
-	<div class="container main-header">
+<section class="full-width-container section-spacing">
+	<header class="container header-margin main-header">
 		<div class="heading">
-			<h1 id="welcome">Transforming Ideas into <span>Innovation</span></h1>
+			<h1 id="welcome">
+				Transforming Ideas into <span class="underline-title">Innovation</span>
+			</h1>
 			<p class="subtitle">
 				Our expert team specializes in crafting tailored, full-stack solutions that drive
 				performance, enhance user experience, and propel your business forward.
@@ -22,8 +24,8 @@
 		<div class="cta-btn">
 			<ButtonLink variant="primary" size="lg" href="/contact">Let's talk</ButtonLink>
 		</div>
-	</div>
-</header>
+	</header>
+</section>
 
 <HomeWebsitePotential />
 
@@ -60,18 +62,6 @@
 
 	#welcome {
 		color: var(--clr-text);
-
-		& > span {
-			display: inline-block;
-			position: relative;
-			color: var(--clr-primary);
-
-			&::after {
-				content: url("../assets/backgrounds/underline.svg");
-				position: absolute;
-				inset: 0.5em 0 0 0;
-			}
-		}
 	}
 
 	.main-header > :global(svg) {

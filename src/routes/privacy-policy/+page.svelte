@@ -1,7 +1,7 @@
 <script>
 </script>
 
-<article class="container section-spacing privacy-policy">
+<article class="article-container section-spacing privacy-policy">
 	<header class="header-margin">
 		<h1>Privacy Policy</h1>
 		<time datetime="2024-10-13">Last updated: October 14th, 2024</time>
