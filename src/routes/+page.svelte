@@ -7,7 +7,7 @@
 	import DigitalLandscape from "../components/home/assets/DigitalLandscape.svelte";
 </script>
 
-<section class="full-width-container section-spacing">
+<section class="breakout-container section-spacing">
 	<header class="container header-margin main-header">
 		<div class="heading">
 			<h1 id="welcome">
@@ -44,14 +44,9 @@
 		}
 
 		@media (min-width: 1024px) {
-			grid-template-columns: 1fr 1fr;
-			column-gap: 10rem;
-			justify-items: flex-start;
+			grid-template-columns: 2fr 3fr;
+			grid-template-rows: 1fr 100px;
 			align-items: center;
-		}
-
-		@media (min-width: 1200px) {
-			row-gap: 0;
 		}
 	}
 
@@ -67,22 +62,17 @@
 	.main-header > :global(svg) {
 		display: none;
 		grid-column: 2;
-		grid-row: 1;
+		grid-row: 1 / 3;
 
-		@media (min-width: 1028px) {
+		@media (min-width: 1024px) {
 			display: block;
+			margin-left: 50px;
 		}
 	}
 
 	.cta-btn {
 		grid-column: 1;
 		grid-row: 2;
-
-		/* Custom breakpoint for when the button is too far away from the heading */
-		@media (min-width: 1300px) {
-			grid-column: 1;
-			grid-row: 1;
-			align-self: flex-end;
-		}
+		align-self: flex-start;
 	}
 </style>

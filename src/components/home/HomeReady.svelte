@@ -29,12 +29,8 @@
 		& > header {
 			margin-bottom: 0;
 
-			& > #ready {
-				font-size: var(--font-size-h1);
-			}
-
 			& > p {
-				max-width: 70ch;
+				max-width: 65ch;
 				margin-inline: auto;
 			}
 		}
