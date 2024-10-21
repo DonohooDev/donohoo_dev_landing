@@ -15,7 +15,6 @@
 	</header>
 
 	<Astronaut />
-
 	<ButtonLink variant="primary" size="lg" href="/contact">Launch</ButtonLink>
 </section>
 
@@ -37,7 +36,8 @@
 	}
 
 	.ready > :global(svg) {
-		max-width: 500px;
+		margin-top: -4rem;
+		max-width: 325px;
 	}
 
 	.ready > :global(.btn) {

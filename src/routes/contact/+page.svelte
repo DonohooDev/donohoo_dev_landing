@@ -5,7 +5,7 @@
 	export let form;
 </script>
 
-<section class="container section-spacing">
+<div class="container section-spacing">
 	<header class="">
 		<h1 id="getting-started">
 			Innovation through <span class="underline-title">Collaboration</span>
@@ -15,34 +15,33 @@
 			mind or just want to explore your options, our team is ready to assist you.
 		</p>
 	</header>
-</section>
 
-<section class="container section-spacing get-started">
-	<header>
+	<section class="get-started">
 		<h2 id="how-to">How to Get Started</h2>
-	</header>
 
-	<ol class="instructions">
-		<li>
-			<strong>Fill out the contact form:</strong> Provide us with some basic information about
-			your project, timeline, and budget. The more details you can share, the better we can understand
-			your needs.
-		</li>
-		<li>
-			<strong>Schedule a consultation:</strong> Once we receive your form submission, we'll reach
-			out to schedule a free consultation. This is an opportunity for us to learn more about your
-			project and for you to ask any questions you may have.
-		</li>
-		<li>
-			<strong>Receive a proposal:</strong> Based on our consultation, we'll prepare a detailed
-			proposal outlining our recommended approach, timeline, and costs.
-		</li>
-		<li>
-			<strong>Start your project:</strong> If you're happy with the proposal, we'll kick off your
-			project with a detailed planning session and get to work bringing your vision to life!
-		</li>
-	</ol>
-</section>
+		<ol class="instructions">
+			<li>
+				<strong>Fill out the contact form:</strong> Provide us with some basic information about
+				your project, timeline, and budget. The more details you can share, the better we can
+				understand your needs.
+			</li>
+			<li>
+				<strong>Schedule a consultation:</strong> Once we receive your form submission, we'll
+				reach out to schedule a free consultation. This is an opportunity for us to learn more
+				about your project and for you to ask any questions you may have.
+			</li>
+			<li>
+				<strong>Receive a proposal:</strong> Based on our consultation, we'll prepare a detailed
+				proposal outlining our recommended approach, timeline, and costs.
+			</li>
+			<li>
+				<strong>Start your project:</strong> If you're happy with the proposal, we'll kick off
+				your project with a detailed planning session and get to work bringing your vision to
+				life!
+			</li>
+		</ol>
+	</section>
+</div>
 
 <div class="article-container section-spacing">
 	<form class="form" method="POST" action="?/submitForm" use:enhance>
@@ -162,6 +161,10 @@
 <style>
 	#getting-started {
 		color: var(--clr-text);
+	}
+
+	.get-started {
+		margin-top: 8rem;
 	}
 
 	.instructions {

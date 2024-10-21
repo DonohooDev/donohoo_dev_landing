@@ -24,11 +24,6 @@
 						</button>
 					</li>
 					<li>
-						<button class="nav-link" role="link" on:click={() => goto("/about")}>
-							About
-						</button>
-					</li>
-					<li>
 						<button class="nav-link" role="link" on:click={() => goto("/contact")}>
 							Contact
 						</button>
@@ -62,18 +57,6 @@
 										class="fa-regular fa-house fa-lg"
 									/>
 									Home
-								</button>
-							</li>
-							<li>
-								<button
-									class="mobile-menu-link"
-									role="link"
-									on:click={() => toggleMobileMenu("/about")}
-								>
-									<i
-										style="margin-right: 1rem;"
-										class="fa-regular fa-buildings fa-lg"
-									/>About
 								</button>
 							</li>
 							<li>
