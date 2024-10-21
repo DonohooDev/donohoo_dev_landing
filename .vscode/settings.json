@@ -1,5 +1,5 @@
 {
-	"cSpell.words": ["donohoo", "lettermark", "tseslint"],
+	"cSpell.words": ["donohoo", "lettermark", "sendgrid", "tseslint"],
 	"eslint.validate": ["javascript", "svelte", "typescript"],
 	"editor.formatOnType": false,
 	"editor.formatOnPaste": true,

@@ -10,7 +10,7 @@
 	--clr-gray-light: hsl(153 5% 75%);
 	--clr-gray-dark: hsl(153 5% 15%);
 	--clr-error: hsl(0 100% 50%);
-	--clr-success: hsl(120 100% 50%);
+	--clr-success: hsl(120 100% 35%);
 	--clr-warning: hsl(45 100% 50%);
 	--clr-info: hsl(210 100% 50%);
 	--clr-text: var(--clr-black);
@@ -280,11 +280,11 @@ form {
 
 		& > label {
 			@media (min-width: 768px) {
-				&:nth-child(even) {
+				&:nth-child(odd) {
 					grid-column: 1 / 2;
 				}
 
-				&:nth-child(odd) {
+				&:nth-child(even) {
 					grid-column: 2 / 3;
 				}
 			}
@@ -330,11 +330,19 @@ h1 > span.underline-title {
 .content-grid {
 	display: grid;
 	grid-template-columns:
-		[full-width-start] 1fr [breakout-start] 100px
-		[content-start] 100px [article-start] minmax(min-content, 800px)
-		[article-end] 100px [content-end] 100px
+		[full-width-start] 1fr [breakout-start] 50px
+		[content-start] 50px [article-start] minmax(min-content, 800px)
+		[article-end] 50px [content-end] 50px
 		[breakout-end] 1fr [full-width-end];
 	align-content: flex-start;
+
+	@media (min-width: 768px) {
+		grid-template-columns:
+			[full-width-start] 1fr [breakout-start] 100px
+			[content-start] 100px [article-start] minmax(min-content, 800px)
+			[article-end] 100px [content-end] 100px
+			[breakout-end] 1fr [full-width-end];
+	}
 }
 
 .content-grid > .full-width-container,

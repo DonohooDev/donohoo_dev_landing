@@ -1,41 +1,8 @@
 <script lang="ts">
+	import { enhance } from "$app/forms";
 	import Button from "$components/common/Button.svelte";
 
-	let isSending = false;
-
-	async function handleSubmit(event: Event) {
-		event.preventDefault();
-		const form = event.target as HTMLFormElement;
-		const formData = new FormData(form);
-
-		if (formData.get("honeypot")) {
-			// If our honeypot field is filled out, we know it's a bot
-			return;
-		}
-
-		try {
-			isSending = true;
-			new Promise<void>((resolve, _reject) => {
-				setTimeout(() => {
-					resolve();
-				}, 2000);
-			});
-			// const res = await emailjs.sendForm("postmark_salessource", "template_send_to", form, {
-			// 	publicKey: "PUBLIC_KEY",
-			// });
-
-			// if (res.status === 200) {
-			// 	form.reset();
-
-			// 	// Show success message
-			// 	alert("Your message has been sent. We will get back to you as soon as possible.");
-			// }
-		} catch (error) {
-			console.error(error);
-		} finally {
-			isSending = false;
-		}
-	}
+	export let form;
 </script>
 
 <section class="container section-spacing">
@@ -78,27 +45,49 @@
 </section>
 
 <div class="article-container section-spacing">
-	<form class="form" on:submit={handleSubmit}>
+	<form class="form" method="POST" action="?/submitForm" use:enhance>
 		<label for="company">
 			<span> Company </span>
-			<input type="text" id="company" name="company" />
+			<input
+				type="text"
+				id="company"
+				value={form?.lastSubmission?.company ?? ""}
+				name="company"
+			/>
 		</label>
 
 		<div class="form-group">
-			<label for="name">
-				<span> Name </span>
-				<input type="text" id="name" name="name" required />
+			<label for="full_name">
+				<span> Full Name </span>
+				<input
+					type="text"
+					id="full_name"
+					name="full_name"
+					value={form?.lastSubmission?.full_name ?? ""}
+					required
+				/>
 			</label>
 
 			<label for="email">
 				<span> Email Address </span>
-				<input type="text" id="email" name="email" required />
+				<input
+					type="email"
+					id="email"
+					name="email"
+					value={form?.lastSubmission?.email ?? ""}
+					required
+				/>
 			</label>
 		</div>
 
 		<label for="intention">
 			<span> Project Intention </span>
-			<select id="intention" name="intention" required>
+			<select
+				id="intention"
+				name="intention"
+				value={form?.lastSubmission?.intention ?? ""}
+				required
+			>
 				<option value="">Select an option</option>
 				<option value="landing-page">New landing page</option>
 				<option value="internal-tool">New internal tool</option>
@@ -110,22 +99,45 @@
 
 		<label for="description">
 			<span> Please describe your project or inquiry: </span>
-			<textarea id="description" name="description" rows="5" required />
+			<textarea
+				id="description"
+				name="description"
+				value={form?.lastSubmission?.description ?? ""}
+				rows="5"
+				required
+			/>
 		</label>
 
 		<label for="timeline">
 			<span> Timeline </span>
-			<input type="text" id="timeline" name="timeline" placeholder="Ex: 2 months" />
+			<input
+				type="text"
+				id="timeline"
+				name="timeline"
+				value={form?.lastSubmission?.timeline ?? ""}
+				placeholder="Ex: 2 months"
+			/>
 		</label>
 
 		<label for="budget">
 			<span> Budget </span>
-			<input type="text" id="budget" name="budget" placeholder="Ex: $25,000" />
+			<input
+				type="text"
+				id="budget"
+				name="budget"
+				value={form?.lastSubmission?.budget ?? ""}
+				placeholder="Ex: $25,000"
+			/>
 		</label>
 
 		<label for="referrer">
 			<span> How did you hear about us? </span>
-			<select id="referrer" name="referrer" required>
+			<select
+				id="referrer"
+				name="referrer"
+				value={form?.lastSubmission?.referrer ?? ""}
+				required
+			>
 				<option value="">Select an option</option>
 				<option value="google">Google</option>
 				<option value="linked-in">LinkedIn</option>
@@ -137,14 +149,17 @@
 
 		<label for="honeypot" class="visually-hidden">
 			<span>Leave this field blank</span>
-			<input type="text" id="honeypot" name="misdirection" />
+			<input type="text" id="honeypot" name="honeypot" />
 		</label>
-
 		<Button type="submit">Submit</Button>
 	</form>
+
+	{#if form?.message}
+		<p class="submission-msg" class:error={!form?.success}>{form.message}</p>
+	{/if}
 </div>
 
-<style scoped>
+<style>
 	#getting-started {
 		color: var(--clr-text);
 	}
@@ -162,5 +177,15 @@
 		font-weight: 600;
 		font-size: var(--font-size-lg);
 		color: var(--clr-primary);
+	}
+
+	.submission-msg {
+		margin-top: 4rem;
+		font-size: var(--font-size-lg);
+		color: var(--clr-success);
+
+		&.error {
+			color: var(--clr-error);
+		}
 	}
 </style>
