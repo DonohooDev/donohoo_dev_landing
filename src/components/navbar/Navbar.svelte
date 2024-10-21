@@ -7,6 +7,7 @@
 	import NavbarMobileMenuButton from "./NavbarMobileMenuButton.svelte";
 	import { isMobileMenuOpen, toggleMobileMenu } from "$stores/mobile-menu.store";
 	import DigitalLandscape from "../home/assets/DigitalLandscape.svelte";
+	import ButtonLink from "$components/common/ButtonLink.svelte";
 </script>
 
 <header class="full-width-container navigation">
@@ -19,14 +20,10 @@
 			<nav class="desktop-menu-navigation">
 				<ul>
 					<li>
-						<button class="nav-link" role="link" on:click={() => goto("/")}>
-							Home
-						</button>
+						<ButtonLink size="sm" href="/" variant="text">Home</ButtonLink>
 					</li>
 					<li>
-						<button class="nav-link" role="link" on:click={() => goto("/contact")}>
-							Contact
-						</button>
+						<ButtonLink size="sm" href="/contact" variant="text">Contact</ButtonLink>
 					</li>
 				</ul>
 			</nav>
@@ -164,7 +161,6 @@
 			display: flex;
 			list-style: none;
 			align-items: center;
-			gap: 2rem;
 
 			@media screen and (min-width: 1200px) {
 				gap: 4rem;
