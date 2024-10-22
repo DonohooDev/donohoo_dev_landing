@@ -161,10 +161,7 @@
 			display: flex;
 			list-style: none;
 			align-items: center;
-
-			@media screen and (min-width: 1200px) {
-				gap: 4rem;
-			}
+			gap: 1rem;
 		}
 
 		& li {

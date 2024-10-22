@@ -7,6 +7,30 @@
 	import DigitalLandscape from "../components/home/assets/DigitalLandscape.svelte";
 </script>
 
+<svelte:head>
+	<title>Home | Donohoo Dev</title>
+	<meta
+		name="description"
+		content="Our expert team specializes in crafting tailored, full-stack solutions that drive performance, enhance user experience, and propel your business forward."
+	/>
+	<meta property="og:title" content="Transforming Ideas into Innovation" />
+	<meta
+		property="og:description"
+		content="Our expert team specializes in crafting tailored, full-stack solutions that drive performance, enhance user experience, and propel your business forward."
+	/>
+	<meta name="og:url" content="https://donohoo.dev/" />
+	<meta name="twitter:title" content="Transforming Ideas into Innovation" />
+	<meta
+		name="twitter:description"
+		content="Our expert team specializes in crafting tailored, full-stack solutions that drive performance, enhance user experience, and propel your business forward."
+	/>
+	<meta name="twitter:url" content="https://donohoo.dev/" />
+	<meta
+		name="keywords"
+		content="full-stack solutions, user experience, business, performance, software consulting"
+	/>
+</svelte:head>
+
 <section class="breakout-container section-spacing">
 	<header class="container header-margin main-header">
 		<div class="heading">
