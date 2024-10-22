@@ -5,6 +5,30 @@
 	export let form;
 </script>
 
+<svelte:head>
+	<title>Contact | Donohoo Dev</title>
+	<meta
+		name="description"
+		content="Ready to elevate your online presence? We're here to help! Whether you have a project in mind or just want to explore your options, our team is ready to assist you."
+	/>
+	<meta property="og:title" content="Innovation through Collaboration" />
+	<meta
+		property="og:description"
+		content="Ready to elevate your online presence? We're here to help! Whether you have a project in mind or just want to explore your options, our team is ready to assist you."
+	/>
+	<meta name="og:url" content="https://donohoo.dev/contact" />
+	<meta name="twitter:title" content="Innovation through Collaboration" />
+	<meta
+		name="twitter:description"
+		content="Ready to elevate your online presence? We're here to help! Whether you have a project in mind or just want to explore your options, our team is ready to assist you."
+	/>
+	<meta name="twitter:url" content="https://donohoo.dev/contact" />
+	<meta
+		name="keywords"
+		content="full-stack solutions, user experience, business, performance, software consulting"
+	/>
+</svelte:head>
+
 <div class="container section-spacing">
 	<header class="">
 		<h1 id="getting-started">
