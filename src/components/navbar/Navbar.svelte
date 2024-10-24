@@ -2,7 +2,6 @@
 	import LogoSolid from "./NavbarLogo.svelte";
 	import { slide } from "svelte/transition";
 	import { quintInOut } from "svelte/easing";
-	import { goto } from "$app/navigation";
 	import NavbarThemeToggle from "./NavbarThemeToggle.svelte";
 	import NavbarMobileMenuButton from "./NavbarMobileMenuButton.svelte";
 	import { isMobileMenuOpen, toggleMobileMenu } from "$stores/mobile-menu.store";
@@ -10,7 +9,7 @@
 	import ButtonLink from "$components/common/ButtonLink.svelte";
 </script>
 
-<header class="full-width-container navigation">
+<header class="full-width-breakout-container navigation">
 	<div class="container">
 		<div class="main-nav">
 			<button class="nav-logo" on:click={() => toggleMobileMenu("/", false)}>

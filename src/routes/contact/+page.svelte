@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { enhance } from "$app/forms";
 	import Button from "$components/common/Button.svelte";
+	import TitleUnderline from "$components/common/TitleUnderline.svelte";
 
 	export let form;
 </script>
@@ -32,7 +33,9 @@
 <div class="container section-spacing">
 	<header class="">
 		<h1 id="getting-started">
-			Innovation through <span class="underline-title">Collaboration</span>
+			Innovation through <TitleUnderline underlineScale={225} positionTop={90}
+				>Collaboration</TitleUnderline
+			>
 		</h1>
 		<p class="subtitle">
 			Ready to elevate your online presence? We're here to help! Whether you have a project in
