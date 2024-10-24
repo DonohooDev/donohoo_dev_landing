@@ -276,7 +276,8 @@ form {
 		grid-column: span 2;
 		display: grid;
 		grid-template-columns: subgrid;
-		grid-template-rows: subgrid;
+		grid-template-rows: auto;
+		gap: inherit;
 
 		& > label {
 			@media (min-width: 768px) {
@@ -289,18 +290,6 @@ form {
 				}
 			}
 		}
-	}
-}
-
-h1 > span.underline-title {
-	display: inline-block;
-	position: relative;
-	color: var(--clr-primary);
-
-	&::after {
-		content: url("../src/assets/backgrounds/underline.svg");
-		position: absolute;
-		inset: 0.5em 0 0 0;
 	}
 }
 
