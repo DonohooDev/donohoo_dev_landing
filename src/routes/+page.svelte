@@ -1,5 +1,6 @@
 <script>
 	import ButtonLink from "$components/common/ButtonLink.svelte";
+	import TitleUnderline from "$components/common/TitleUnderline.svelte";
 	import HomeAboutUs from "$components/home/HomeAboutUs.svelte";
 	import HomeReady from "$components/home/HomeReady.svelte";
 	import HomeServices from "$components/home/HomeServices.svelte";
@@ -35,7 +36,9 @@
 	<header class="container header-margin main-header">
 		<div class="heading">
 			<h1 id="welcome">
-				Transforming Ideas into <span class="underline-title">Innovation</span>
+				Transforming Ideas into <TitleUnderline underlineScale={175} positionTop={90}
+					>Innovation</TitleUnderline
+				>
 			</h1>
 			<p class="subtitle">
 				Our expert team specializes in crafting tailored, full-stack solutions that drive
