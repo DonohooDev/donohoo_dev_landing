@@ -119,7 +119,7 @@
 		transition:
 			box-shadow 0.3s,
 			backdrop-filter 0.3s,
-			background-color 500ms;
+			background-color 0.3s;
 
 		& > .container {
 			padding-block: 0;

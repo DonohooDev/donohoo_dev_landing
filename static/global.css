@@ -101,9 +101,10 @@ body {
 	color: var(--clr-text);
 	margin: 0;
 	padding: 0;
-	-webkit-transition: background-color 100ms linear;
-	-ms-transition: background-color 100ms linear;
-	transition: background-color 100ms linear;
+	transition:
+		box-shadow 0.3s,
+		backdrop-filter 0.3s,
+		background-color 0.3s;
 	accent-color: var(--clr-primary);
 	caret-color: var(--clr-primary);
 	highlight-color: hsl(from var(--clr-primary) h s l / 0.5);
