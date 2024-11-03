@@ -19,13 +19,13 @@
 		property="og:description"
 		content="Our expert team specializes in crafting tailored, full-stack solutions that drive performance, enhance user experience, and propel your business forward."
 	/>
-	<meta name="og:url" content="https://donohoo.dev/" />
+	<meta name="og:url" content="https://www.donohoo.dev/" />
 	<meta name="twitter:title" content="Transforming Ideas into Innovation" />
 	<meta
 		name="twitter:description"
 		content="Our expert team specializes in crafting tailored, full-stack solutions that drive performance, enhance user experience, and propel your business forward."
 	/>
-	<meta name="twitter:url" content="https://donohoo.dev/" />
+	<meta name="twitter:url" content="https://www.donohoo.dev/" />
 	<meta
 		name="keywords"
 		content="full-stack solutions, user experience, business, performance, software consulting"
