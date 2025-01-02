@@ -15,7 +15,8 @@
 	</header>
 
 	<Astronaut />
-	<ButtonLink variant="primary" size="lg" href="/contact">Launch</ButtonLink>
+
+	<ButtonLink variant="primary" size="lg" href="/contact#how-to">Launch</ButtonLink>
 </section>
 
 <style scoped>

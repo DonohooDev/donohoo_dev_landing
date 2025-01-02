@@ -59,7 +59,11 @@
 
 		& svg {
 			color: var(--clr-accent);
-			font-size: 7rem;
+			font-size: 5.5rem;
+
+			@media (min-width: 1080px) {
+				font-size: 7rem;
+			}
 		}
 
 		& h3 {
