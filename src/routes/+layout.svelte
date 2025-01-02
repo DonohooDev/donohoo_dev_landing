@@ -1,6 +1,25 @@
 <script>
-	import Navbar from "$components/navbar/Navbar.svelte";
+	import { navigating } from "$app/stores";
 	import Footer from "$components/footer/Footer.svelte";
+	import Navbar from "$components/navbar/Navbar.svelte";
+
+	let navigatingValue = false;
+	let displayLoadingIndicator = false;
+
+	navigating.subscribe((value) => {
+		navigatingValue = !!value;
+
+		if (navigatingValue) {
+			console.log("navigatingValue", navigatingValue);
+			setTimeout(() => {
+				if (navigatingValue) {
+					displayLoadingIndicator = true;
+				}
+			}, 100);
+		} else {
+			displayLoadingIndicator = false;
+		}
+	});
 </script>
 
 <div class="app-layout">
@@ -8,8 +27,17 @@
 		<Navbar />
 	</div>
 
-	<main class="content-grid">
-		<slot />
+	<main
+		class="content-grid"
+		style="align-content: {displayLoadingIndicator ? 'stretch' : 'flex-start'}"
+	>
+		{#if displayLoadingIndicator}
+			<div class="loading-indicator full-width-container">
+				<i class="fa-solid fa-spinner fa-spin" style="font-size: 5rem" />
+			</div>
+		{:else}
+			<slot />
+		{/if}
 	</main>
 
 	<div class="content-grid footer">

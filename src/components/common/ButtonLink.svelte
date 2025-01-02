@@ -7,7 +7,7 @@
 	const buttonClass = `btn btn-${variant} btn-${size}`;
 </script>
 
-<a href="/" {...$$restProps} class={`${buttonClass} ${$$restProps.class}`}>
+<a href={$$restProps.href} class={`${buttonClass} ${$$restProps.class}`} {...$$restProps}>
 	<slot />
 </a>
 

@@ -1,7 +1,7 @@
 <script>
+	import Developer from "./assets/Developer.svelte";
 	import Integrations from "./assets/Integrations.svelte";
 	import LandingPage from "./assets/LandingPage.svelte";
-	import Developer from "./assets/Developer.svelte";
 </script>
 
 <section class="container section-spacing services">
@@ -13,6 +13,8 @@
 			development, e-commerce solutions, internal tools, and performance optimization.
 		</p>
 	</header>
+
+	<div class="spacer" />
 
 	<div class="service-sections">
 		<div class="service">
@@ -29,6 +31,8 @@
 			<Developer />
 		</div>
 
+		<div class="spacer" />
+
 		<div class="service">
 			<div class="description">
 				<h3>Landing Pages with SEO & Speed Optimization</h3>
@@ -43,6 +47,8 @@
 
 			<LandingPage />
 		</div>
+
+		<div class="spacer" />
 
 		<div class="service">
 			<div class="description">
@@ -61,12 +67,22 @@
 </section>
 
 <style scoped>
+	.spacer {
+		&:first-of-type {
+			@media (min-width: 768px) {
+				display: none;
+			}
+		}
+
+		&::after {
+			margin-block: 2rem;
+			background-color: var(--clr-accent);
+		}
+	}
+
 	.service-sections {
 		display: grid;
 		gap: 4rem;
-
-		@media (min-width: 768px) {
-		}
 
 		@media (min-width: 1024px) {
 			gap: 8rem;
@@ -80,10 +96,6 @@
 				grid-template-columns: 1fr 1fr;
 				align-items: center;
 				column-gap: 4rem;
-
-				&:not(:last-child) {
-					margin-bottom: 4rem;
-				}
 			}
 
 			@media (min-width: 1024px) {
